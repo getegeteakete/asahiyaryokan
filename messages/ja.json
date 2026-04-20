@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "朝日屋 ASAHIYA｜糸島・芥屋の割烹民宿",
+    "description": "糸島・芥屋の割烹民宿 朝日屋。生け簀直送の活魚を使った海鮮丼・釜めし・懐石料理と、船だまりを望むお宿。"
+  },
+  "nav": {
+    "brand": "朝日屋",
+    "brandSub": "ASAHIYA",
+    "menu": "おしながき",
+    "stay": "ご宿泊",
+    "info": "店舗情報"
+  },
+  "hero": {
+    "eyebrow": "ITOSHIMA · KEYA",
+    "titleLine1": "糸島の海、",
+    "titleLine2": "一皿に",
+    "titleAccent": "宿す",
+    "titleLine3": "。",
+    "lead1": "船だまりを望む割烹民宿・朝日屋。",
+    "lead2": "生け簀に揺れる活魚を、職人の手で",
+    "lead3": "今日という一膳に仕立てます。",
+    "meta": "KAPPO MINSHUKU ASAHIYA",
+    "scroll": "SCROLL"
+  },
+  "about": {
+    "label": "店について",
+    "titleLine1": "船だまりを望む、",
+    "titleLine2": "割烹民宿。",
+    "sub": "kappō minshuku asahiya",
+    "body1": "窓の外に船だまりが眺められる、割烹民宿＆食事処。一階の食事処では、地元糸島で水揚げされた活魚を、迫力満点の海鮮丼や定食でご提供しております。",
+    "body2": "夜の部では、ご予算・ご要望に合わせた懐石のお席を。季節を映した一品一品を、静かな夜とともに。"
+  },
+  "video": {
+    "label": "動画で見る",
+    "titleLine1": "朝日屋の、風景。",
+    "sub": "itoshima · keya",
+    "caption": "・ 生け簀と、潮のにおいと ・"
+  },
+  "menu": {
+    "label": "お品書き",
+    "titleLine1": "本日の、お品書き。",
+    "sub": "o-shinagaki",
+    "taxIncl": "税込",
+    "taxExcl": "税抜",
+    "tabs": {
+      "kaisendon": "海鮮丼",
+      "asahizen": "朝日膳",
+      "kamameshi": "釜めし膳",
+      "teishoku": "定食"
+    },
+    "kaisendon": {
+      "name": "海鮮丼",
+      "enName": "Seafood Rice Bowl",
+      "desc": "海鮮丼、小鉢、茶碗蒸し、あら汁、漬物。",
+      "bowlOnly": "海鮮丼単品",
+      "note": "※ 季節により内容が異なる場合がございます。"
+    },
+    "asahizen": {
+      "name": "朝日膳",
+      "enName": "The Asahi Set",
+      "desc": "刺身、さざえ刺し、魚煮物、天ぷら、小鉢、茶碗蒸し、ご飯、あら汁、漬物。",
+      "note": "※ 季節により内容が異なる場合がございます。"
+    },
+    "kamameshi": {
+      "name": "朝日釜めし膳",
+      "enName": "Clay-pot Rice Set",
+      "desc": "生け簀より新鮮な具材を入れて炊き上げます。",
+      "ingredientsTitle": "釜めしの具（一品お選びください）",
+      "ing1": "じゃこ・わかめ",
+      "ing2": "ウニ",
+      "ing3": "サザエ",
+      "ing4": "アワビ",
+      "potOnly": "釜めし単品",
+      "note": "※ ご提供までに 20〜25 分程度いただきます。\n※ 季節により内容が異なる場合がございます。"
+    },
+    "teishoku": {
+      "arataki": "荒炊き定食",
+      "niyakana": "煮魚定食",
+      "sashimi": "刺身定食",
+      "sashimiNi": "刺身煮魚定食",
+      "tempura": "天ぷら定食",
+      "sashimiTempura": "刺身天ぷら定食",
+      "taicha": "鯛茶定食",
+      "note": "※ 毎朝、生け簀より獲れたて新鮮な魚にて調理しています。"
+    }
+  },
+  "kaiseki": {
+    "label": "懐石",
+    "titleLine1": "夜は、静かに。",
+    "titleLine2": "朝日懐石。",
+    "sub": "evenings by reservation",
+    "priceUnit": "〜 / お一人様",
+    "priceNote": "※ サービス料・消費税別途",
+    "body": "ご予算、ご要望に合わせて、一席ごとにお仕立ていたします。季節を映した一品一品を、静かな夜とともに。",
+    "feat1": "ご予算・ご要望ご相談ください",
+    "feat2": "マイクロバス送迎可",
+    "feat3": "カラオケ有（有料）",
+    "feat4": "5名様以上からご予約いただけます"
+  },
+  "stay": {
+    "label": "ご宿泊",
+    "titleLine1": "夜明けと、",
+    "titleLine2": "海の音を連れて。",
+    "sub": "accommodation",
+    "plan01Tag": "Plan 01",
+    "plan01Name": "満潮 1F（食事処）",
+    "plan02Tag": "Plan 02",
+    "plan02Name": "大門コース",
+    "weekday": "平日",
+    "weekend": "土・日・祝前日 ★",
+    "taxIncl": "税込",
+    "taxExcl": "税抜",
+    "amenities": {
+      "wifi": "Wi-Fi",
+      "fridge": "共同冷蔵庫",
+      "shampoo": "シャンプー",
+      "conditioner": "リンス",
+      "towel": "タオル",
+      "toothbrush": "歯ブラシ",
+      "razor": "ひげそり",
+      "dryer": "ドライヤー"
+    },
+    "notes": "★ 印は土・日・祝日の前日の料金です。\n※ 金・土・祝前日及びピーク時は、料金が異なります。\n※ 消費税 10% 及び福岡県宿泊税（200円／人）別途\n※【長期滞在プラン】お仕事や合宿、お食事は日替わり家庭料理にて"
+  },
+  "press": {
+    "label": "掲載",
+    "title": "メディア掲載"
+  },
+  "access": {
+    "label": "店舗情報",
+    "titleLine1": "お越しの、道しるべ。",
+    "sub": "access · contact",
+    "address": "所在地",
+    "addressValue": "福岡県糸島市志摩芥屋874-3",
+    "contact": "連絡先",
+    "hours": "営業時間",
+    "hoursValue": "食事処　11:30 〜　／　夜の部　事前予約のみ",
+    "payment": "支払方法",
+    "paymentValue": "現金／電子決済／クレジット（一部）",
+    "seats": "座席数",
+    "seatsValue": "食事処30席",
+    "parking": "駐車場",
+    "parkingValue": "25台程度、マイクロバス可",
+    "other": "その他",
+    "otherValue": "マイクロバス送迎あり、カラオケあり",
+    "ctaPhone": "電話で予約",
+    "ctaInstagram": "Instagram"
+  },
+  "footer": {
+    "copy": "© Asahiya · Itoshima, Fukuoka"
+  }
+}

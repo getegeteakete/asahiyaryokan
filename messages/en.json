@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Asahiya | Kappō Minshuku in Itoshima · Keya",
+    "description": "Asahiya — a kappō minshuku in Itoshima, Fukuoka. Seafood bowls, kamameshi and kaiseki served from our live tanks, with rooms overlooking the fishing harbor."
+  },
+  "nav": {
+    "brand": "ASAHIYA",
+    "brandSub": "朝日屋",
+    "menu": "Menu",
+    "stay": "Stay",
+    "info": "Info"
+  },
+  "hero": {
+    "eyebrow": "糸島・芥屋",
+    "titleLine1": "A table set",
+    "titleLine2": "by the ",
+    "titleAccent": "Itoshima",
+    "titleLine3": " sea.",
+    "lead1": "A kappō inn overlooking the harbor of Keya.",
+    "lead2": "Live fish from our seawater tanks,",
+    "lead3": "prepared by hand, served today.",
+    "meta": "Kappō Minshuku Asahiya",
+    "scroll": "SCROLL"
+  },
+  "about": {
+    "label": "About",
+    "titleLine1": "A kappō inn",
+    "titleLine2": "by the harbor.",
+    "sub": "割烹民宿 朝日屋",
+    "body1": "A kappō inn with a dining room facing the fishing harbor. On the first floor, we serve locally caught live fish in generous seafood bowls and set meals.",
+    "body2": "Evening kaiseki is served by reservation, tailored to your budget and occasion — each dish reflecting the season."
+  },
+  "video": {
+    "label": "Watch",
+    "titleLine1": "Scenes from Asahiya.",
+    "sub": "糸島・芥屋",
+    "caption": "· The tanks, the tide, the table ·"
+  },
+  "menu": {
+    "label": "Menu",
+    "titleLine1": "Today's Table.",
+    "sub": "お品書き",
+    "taxIncl": "tax in",
+    "taxExcl": "excl.",
+    "tabs": {
+      "kaisendon": "KAISEN-DON",
+      "asahizen": "ASAHI-ZEN",
+      "kamameshi": "KAMAMESHI",
+      "teishoku": "SET MEALS"
+    },
+    "kaisendon": {
+      "name": "Kaisen-don",
+      "enName": "海鮮丼",
+      "desc": "Seafood bowl, small dish, chawanmushi, fish-bone miso, pickles.",
+      "bowlOnly": "Bowl Only",
+      "note": "※ Contents may vary by season."
+    },
+    "asahizen": {
+      "name": "Asahi-zen",
+      "enName": "朝日膳",
+      "desc": "Sashimi, sazae sashimi, simmered fish, tempura, small dish, chawanmushi, rice, fish-bone miso, pickles.",
+      "note": "※ Contents may vary by season."
+    },
+    "kamameshi": {
+      "name": "Asahi Kamameshi Set",
+      "enName": "朝日釜めし膳",
+      "desc": "Fresh ingredients from our tanks, steamed with rice in a small clay pot.",
+      "ingredientsTitle": "Choose one ingredient",
+      "ing1": "Whitebait & Wakame",
+      "ing2": "Sea Urchin",
+      "ing3": "Turban Shell",
+      "ing4": "Abalone",
+      "potOnly": "Clay-pot Only",
+      "note": "※ Preparation takes 20–25 minutes.\n※ Contents may vary by season."
+    },
+    "teishoku": {
+      "arataki": "Arataki (Simmered Fish Head) Set",
+      "niyakana": "Simmered Fish Set",
+      "sashimi": "Sashimi Set",
+      "sashimiNi": "Sashimi & Simmered Fish Set",
+      "tempura": "Tempura Set",
+      "sashimiTempura": "Sashimi & Tempura Set",
+      "taicha": "Sea Bream Chazuke Set",
+      "note": "※ Prepared each morning with fish from our live tanks."
+    }
+  },
+  "kaiseki": {
+    "label": "Kaiseki",
+    "titleLine1": "Asahi Kaiseki.",
+    "titleLine2": "By reservation.",
+    "sub": "夜の部・要予約",
+    "priceUnit": "~ / per person",
+    "priceNote": "※ Service charge & tax separate",
+    "body": "Tailored to your budget and occasion — each dish reflecting the season, served in a quiet evening setting.",
+    "feat1": "Customisable to your preferences",
+    "feat2": "Microbus pickup available",
+    "feat3": "Karaoke available (extra charge)",
+    "feat4": "Minimum: 5 guests"
+  },
+  "stay": {
+    "label": "Stay",
+    "titleLine1": "Wake to",
+    "titleLine2": "the sound of the sea.",
+    "sub": "ご宿泊",
+    "plan01Tag": "Plan 01",
+    "plan01Name": "Manchō 1F (Dining Floor)",
+    "plan02Tag": "Plan 02",
+    "plan02Name": "Daimon Course",
+    "weekday": "Weekday",
+    "weekend": "Weekend / Pre-holiday ★",
+    "taxIncl": "tax in",
+    "taxExcl": "excl.",
+    "amenities": {
+      "wifi": "Wi-Fi",
+      "fridge": "Fridge",
+      "shampoo": "Shampoo",
+      "conditioner": "Conditioner",
+      "towel": "Towel",
+      "toothbrush": "Toothbrush",
+      "razor": "Razor",
+      "dryer": "Dryer"
+    },
+    "notes": "★ Pre-holiday rate (Sat / Sun / pre-holiday eve).\n※ Rates may vary on Fri / Sat / pre-holiday eves and peak seasons.\n※ 10% consumption tax & Fukuoka lodging tax (¥200 / person) separate.\n※ Long-stay plans available — home-style meals for business or training stays."
+  },
+  "press": {
+    "label": "Press",
+    "title": "Featured In"
+  },
+  "access": {
+    "label": "Information",
+    "titleLine1": "Finding Us.",
+    "sub": "アクセス",
+    "address": "Address",
+    "addressValue": "874-3 Shima-Keya, Itoshima-shi, Fukuoka",
+    "contact": "Contact",
+    "hours": "Hours",
+    "hoursValue": "Lunch from 11:30　/　Dinner by reservation only",
+    "payment": "Payment",
+    "paymentValue": "Cash / e-money / Credit (partial)",
+    "seats": "Seats",
+    "seatsValue": "30 seats (dining floor)",
+    "parking": "Parking",
+    "parkingValue": "Approx. 25 cars, microbus OK",
+    "other": "Other",
+    "otherValue": "Microbus pickup, karaoke available",
+    "ctaPhone": "Reserve by Phone",
+    "ctaInstagram": "Instagram"
+  },
+  "footer": {
+    "copy": "© Asahiya · Itoshima, Fukuoka"
+  }
+}
