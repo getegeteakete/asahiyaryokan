@@ -9,6 +9,15 @@ export default function Kaiseki() {
 
   return (
     <section id="kaiseki" className="relative z-[2] bg-gradient-to-br from-kinari to-washi px-6 md:px-10 py-24 md:py-36 overflow-hidden">
+      {/* デザインパターン背景 */}
+      <div className="absolute inset-0 opacity-[0.04] z-0">
+        <img
+          src="/images/asahiya-pattern.png"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
       <Deco type="tokkuri" className="top-16 right-6 md:right-16" size={150} opacity={0.07} rotate={8} variant="dark" />
       <div className="max-w-[1200px] mx-auto relative z-[2]">
         <p className="section-label text-shu">{t('label')}</p>

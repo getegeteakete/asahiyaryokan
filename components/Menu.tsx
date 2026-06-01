@@ -14,6 +14,15 @@ export default function Menu() {
       id="menu"
       className="relative z-[2] bg-sumi text-kinari px-6 md:px-10 py-24 md:py-36 overflow-hidden"
     >
+      {/* デザインパターン背景 */}
+      <div className="absolute inset-0 opacity-[0.03] z-0">
+        <img
+          src="/images/asahiya-pattern.png"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
       <Deco type="shrimp" className="top-20 left-[-30px] md:left-4" size={220} opacity={0.07} rotate={20} variant="light" />
       <Deco type="crab" className="bottom-24 right-[-30px] md:right-6" size={240} opacity={0.06} rotate={-10} variant="light" />
       <div className="max-w-[1200px] mx-auto relative z-[2]">

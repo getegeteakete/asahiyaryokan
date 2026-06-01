@@ -47,11 +47,21 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-5 md:px-10 py-4 md:py-[22px] bg-kinari/85 backdrop-blur-xl border-b border-sumi/[0.08]">
-        <div className="font-mincho text-[16px] md:text-[18px] font-semibold tracking-[0.3em] text-sumi">
-          {t('brand')}
-          <span className="block font-cormorant italic text-[8px] md:text-[9px] tracking-[0.5em] text-clay mt-0.5 font-light">
-            {t('brandSub')}
-          </span>
+        {/* ロゴ */}
+        <div className="flex items-center gap-3">
+          <img 
+            src="/images/asahiya-logo.png" 
+            alt="朝日屋 ASAHIYA" 
+            className="h-8 md:h-10 w-auto"
+          />
+          <div className="hidden sm:block">
+            <div className="font-mincho text-[14px] md:text-[16px] font-semibold tracking-[0.2em] text-sumi">
+              {t('brand')}
+            </div>
+            <span className="block font-cormorant italic text-[7px] md:text-[8px] tracking-[0.4em] text-clay font-light">
+              {t('brandSub')}
+            </span>
+          </div>
         </div>
 
         <div className="flex items-center gap-4 md:gap-8">
