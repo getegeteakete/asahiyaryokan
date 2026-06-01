@@ -5,11 +5,11 @@ import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const SLIDES = [
-  { src: '/images/030-海鮮丼000-1024x683.jpg', labelJa: '海鮮丼', labelEn: 'Kaisen-don' },
-  { src: '/images/040-釜めし膳007-1536x1024.jpg', labelJa: '朝日釜めし膳', labelEn: 'Kamameshi' },
-  { src: '/images/050-懐石003-1536x1024.jpg', labelJa: '朝日懐石', labelEn: 'Kaiseki' },
-  { src: '/images/010-朝日定食005-1024x683.jpg', labelJa: '朝日定食', labelEn: 'Asahi Set' },
-  { src: '/images/3958_0-1024x1024.jpg', labelJa: '伊勢海老の活造り', labelEn: 'Live Lobster' },
+  { src: '/images/002-kaisen-don-new.jpg', labelJa: '海鮮丼', labelEn: 'Kaisen-don' },
+  { src: '/images/001-kaiseki-01.jpg', labelJa: '朝日懐石', labelEn: 'Kaiseki' },
+  { src: '/images/006-sashimi-platter.jpg', labelJa: '刺身盛り', labelEn: 'Sashimi Platter' },
+  { src: '/images/003-ise-ebi-new.jpg', labelJa: '伊勢海老の活造り', labelEn: 'Live Ise Ebi' },
+  { src: '/images/007-white-fish-sashimi.jpg', labelJa: 'お造り盛り合わせ', labelEn: 'Sashimi Assortment' },
 ];
 
 export default function Hero() {
