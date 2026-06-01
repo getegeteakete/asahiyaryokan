@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 import { useLenis } from 'lenis/react';
 import Snap from 'lenis/snap';
 
+// ふわっと着地するイーズアウト（終端で大きく減速＝ぬるっと止まる）
+const easeOutExpo = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+
 /**
  * Lenis 純正の Snap アドオンで、主要セクションの先頭にゆるやかな吸着を付ける。
  *
@@ -28,10 +31,11 @@ export default function SnapSections() {
 
     const snap = new Snap(lenis, {
       type: 'proximity',
-      // 吸着アニメの滑らかさ（Lenis 本体と揃える）
-      lerp: 0.1,
-      // 先頭から画面高の 20% 以内に止まったときだけ吸着（grabby になりすぎない）
-      distanceThreshold: '20%',
+      // lerp の代わりに duration + easing で「ゆっくりふわっと」着地させる
+      duration: 1.5, // 寄るのにかける秒数（大きいほどゆっくり）
+      easing: easeOutExpo, // 終端でぬるっと減速
+      // 先頭から画面高の 45% 以内に止まれば吸着（範囲を広げてもう少しグッと寄る）
+      distanceThreshold: '45%',
       // 連続スナップ防止
       debounce: 500,
     });
