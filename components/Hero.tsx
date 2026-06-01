@@ -1,34 +1,75 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
+
+const SLIDES = [
+  { src: '/images/030-海鮮丼000-1024x683.jpg', labelJa: '海鮮丼', labelEn: 'Kaisen-don' },
+  { src: '/images/040-釜めし膳007-1536x1024.jpg', labelJa: '朝日釜めし膳', labelEn: 'Kamameshi' },
+  { src: '/images/050-懐石003-1536x1024.jpg', labelJa: '朝日懐石', labelEn: 'Kaiseki' },
+  { src: '/images/010-朝日定食005-1024x683.jpg', labelJa: '朝日定食', labelEn: 'Asahi Set' },
+  { src: '/images/3958_0-1024x1024.jpg', labelJa: '伊勢海老の活造り', labelEn: 'Live Lobster' },
+];
 
 export default function Hero() {
   const t = useTranslations('hero');
   const locale = useLocale();
   const isJa = locale === 'ja';
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % SLIDES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section className="relative z-[2] min-h-svh flex flex-col justify-end px-6 md:px-10 pt-[100px] md:pt-[120px] pb-20 md:pb-24 overflow-hidden bg-sumi">
-      {/* 背景画像 - はっきり見せる */}
+      {/* スライダー背景 */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src="/images/030-海鮮丼000-1024x683.jpg"
-          alt="朝日屋の海鮮丼"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-          style={{
-            filter: 'saturate(1.08) contrast(1.03) brightness(0.92)',
-          }}
-        />
-        {/* テキスト部分だけ暗くするグラデーション（下部のみ） */}
+        {SLIDES.map((slide, index) => (
+          <div
+            key={slide.src}
+            className="absolute inset-0 transition-opacity duration-[1500ms] ease-in-out"
+            style={{ opacity: index === current ? 1 : 0 }}
+          >
+            <Image
+              src={slide.src}
+              alt={isJa ? slide.labelJa : slide.labelEn}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              className="object-cover"
+              style={{
+                filter: 'saturate(1.08) contrast(1.03) brightness(0.9)',
+                transform: index === current ? 'scale(1.05)' : 'scale(1)',
+                transition: 'transform 6s ease-out',
+              }}
+            />
+          </div>
+        ))}
+        {/* グラデーション */}
         <div className="absolute inset-0 bg-gradient-to-t from-sumi via-sumi/40 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-sumi/50 to-transparent" />
       </div>
 
+      {/* 現在の料理名ラベル（右上） */}
+      <div className="absolute top-[110px] md:top-[130px] right-6 md:right-10 z-[3] text-right">
+        <span
+          className={`text-kin-light text-[13px] md:text-[15px] tracking-[0.2em] font-light transition-opacity duration-500 ${
+            isJa ? 'font-mincho' : 'font-cormorant italic'
+          }`}
+          style={{ textShadow: '0 2px 12px rgba(0,0,0,0.7)' }}
+        >
+          {isJa ? SLIDES[current].labelJa : SLIDES[current].labelEn}
+        </span>
+      </div>
+
       <div className="relative z-[2] w-full max-w-[1200px] mx-auto">
         <p
-          className={`mb-5 text-[11px] md:text-[12px] tracking-[0.5em] uppercase text-kin-light animate-fadeUp [animation-delay:0.2s] [animation-fill-mode:backwards] font-light ${
+          className={`mb-5 text-[11px] md:text-[12px] tracking-[0.5em] uppercase text-kin-light font-light ${
             isJa ? 'font-cormorant italic' : 'font-mincho'
           }`}
           style={{ textShadow: '0 2px 12px rgba(0,0,0,0.6)' }}
@@ -37,7 +78,7 @@ export default function Hero() {
         </p>
 
         <h1
-          className={`font-medium text-kinari mb-6 animate-fadeUp [animation-delay:0.1s] leading-tight ${
+          className={`font-medium text-kinari mb-6 leading-tight ${
             isJa
               ? 'font-mincho text-[clamp(36px,8vw,72px)] tracking-[0.1em]'
               : 'font-cormorant italic font-normal text-[clamp(36px,7vw,64px)] tracking-[0.02em]'
@@ -62,7 +103,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className="text-[14px] md:text-[16px] leading-[1.9] max-w-[600px] text-kinari/95 animate-fadeUp [animation-delay:0.4s] [animation-fill-mode:backwards] font-light tracking-[0.05em]"
+          className="text-[14px] md:text-[16px] leading-[1.9] max-w-[600px] text-kinari/95 font-light tracking-[0.05em]"
           style={{ textShadow: '0 1px 8px rgba(0,0,0,0.8)' }}
         >
           {isJa ? (
@@ -81,7 +122,7 @@ export default function Hero() {
         </p>
 
         {/* CTAボタン */}
-        <div className="flex flex-wrap gap-4 mt-8 animate-fadeUp [animation-delay:0.6s] [animation-fill-mode:backwards]">
+        <div className="flex flex-wrap gap-4 mt-8">
           <a
             href="#menu"
             className="inline-block px-8 py-3.5 bg-shu text-kinari-light text-[13px] tracking-[0.25em] font-light hover:bg-shu-deep transition-all shadow-lg"
@@ -95,10 +136,25 @@ export default function Hero() {
             {isJa ? '電話で予約' : 'RESERVE'}
           </a>
         </div>
-      </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 font-cormorant italic text-[9px] tracking-[0.5em] text-kin-light/60 animate-bounce">
-        {t('scroll')}
+        {/* スライドインジケーター */}
+        <div className="flex gap-3 mt-10">
+          {SLIDES.map((slide, index) => (
+            <button
+              key={slide.src}
+              type="button"
+              onClick={() => setCurrent(index)}
+              aria-label={`スライド ${index + 1}`}
+              className="group py-2"
+            >
+              <span
+                className={`block h-0.5 transition-all duration-500 ${
+                  index === current ? 'w-10 bg-kin-light' : 'w-5 bg-kinari/40 group-hover:bg-kinari/70'
+                }`}
+              />
+            </button>
+          ))}
+        </div>
       </div>
     </section>
   );
