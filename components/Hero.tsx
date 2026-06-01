@@ -26,7 +26,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative z-[2] min-h-svh flex flex-col justify-end px-6 md:px-10 pt-[100px] md:pt-[120px] pb-20 md:pb-24 overflow-hidden bg-sumi">
+    <section className="snap-section relative z-[2] min-h-svh flex flex-col justify-end px-6 md:px-10 pt-[100px] md:pt-[120px] pb-20 md:pb-24 overflow-hidden bg-sumi">
       {/* スライダー背景 */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {SLIDES.map((slide, index) => (
