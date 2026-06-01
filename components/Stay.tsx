@@ -63,7 +63,7 @@ function PlanCard({ tag, name, weekday, weekend, image }: PlanCardProps) {
           </div>
         </div>
 
-        <div className="mt-7 pt-6 border-t border-sumi/10 flex flex-wrap gap-2">
+        <div className="mt-7 pt-6 flex flex-wrap gap-2">
           {amenityKeys.map((key) => (
             <span
               key={key}
@@ -84,7 +84,7 @@ export default function Stay() {
   return (
     <section
       id="stay"
-      className="relative z-[2] bg-washi border-t border-sumi/10 px-6 md:px-10 py-24 md:py-36"
+      className="relative z-[2] bg-washi px-6 md:px-10 py-24 md:py-36"
     >
       <div className="max-w-[1200px] mx-auto">
         <p className="section-label text-shu">{t('label')}</p>

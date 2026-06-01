@@ -5,7 +5,7 @@ export default function About() {
   const t = useTranslations('about');
 
   return (
-    <section className="relative z-[2] bg-kinari-light border-y border-sumi/10 px-6 md:px-10 py-24 md:py-36">
+    <section className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid gap-16 md:grid-cols-2 md:gap-24 md:items-start">
           <div className="md:pt-4">

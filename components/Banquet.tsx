@@ -6,7 +6,7 @@ export default function Banquet() {
   const features = ['feat1', 'feat2', 'feat3', 'feat4'] as const;
 
   return (
-    <section id="banquet" className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36 border-t border-sumi/10">
+    <section id="banquet" className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36">
       <div className="max-w-[1200px] mx-auto">
         <p className="section-label text-shu">{t('label')}</p>
         <h2 className="section-title mb-12">
@@ -44,7 +44,7 @@ export default function Banquet() {
             <p className="text-[15px] leading-[2] text-sumi-soft mb-5 font-light">{t('body1')}</p>
             <p className="text-[15px] leading-[2] text-sumi-soft mb-8 font-light border-l-2 border-kin pl-6">{t('body2')}</p>
 
-            <div className="pt-6 border-t border-sumi/10 grid gap-4">
+            <div className="pt-6 grid gap-4">
               {features.map((key) => (
                 <div
                   key={key}

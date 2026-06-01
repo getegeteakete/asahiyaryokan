@@ -10,6 +10,7 @@ import Stay from '@/components/Stay';
 import Press from '@/components/Press';
 import Access from '@/components/Access';
 import Footer from '@/components/Footer';
+import WaveDivider from '@/components/WaveDivider';
 
 export default async function HomePage({
   params,
@@ -24,13 +25,21 @@ export default async function HomePage({
       <Header />
       <main>
         <Hero />
+        <WaveDivider top="sumi" bottom="kinari-light" />
         <About />
+        <WaveDivider top="kinari-light" bottom="kinari" flip />
         <VideoSection />
+        <WaveDivider top="kinari" bottom="sumi" />
         <Menu />
+        <WaveDivider top="sumi" bottom="kinari" flip />
         <Kaiseki />
+        <WaveDivider top="washi" bottom="kinari-light" />
         <Banquet />
+        <WaveDivider top="kinari-light" bottom="washi" flip />
         <Stay />
+        <WaveDivider top="washi" bottom="kinari" />
         <Press />
+        <WaveDivider top="kinari" bottom="sumi" flip />
         <Access />
       </main>
       <Footer />
