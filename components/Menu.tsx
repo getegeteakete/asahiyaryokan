@@ -6,30 +6,6 @@ import Image from 'next/image';
 
 type TabKey = 'kaisendon' | 'asahizen' | 'kamameshi' | 'teishoku';
 
-type PriceProps = {
-  yen: string;
-  excl?: string;
-  dark?: boolean;
-};
-
-function Price({ yen, excl, dark = true }: PriceProps) {
-  const t = useTranslations('menu');
-  return (
-    <span className="font-cormorant whitespace-nowrap text-right">
-      {yen}
-      {excl && (
-        <span
-          className={`block text-[10px] mt-0.5 tracking-[0.1em] ${
-            dark ? 'text-kinari/50' : 'text-clay'
-          }`}
-        >
-          {t('taxExcl')} ¥{excl}
-        </span>
-      )}
-    </span>
-  );
-}
-
 export default function Menu() {
   const t = useTranslations('menu');
   const locale = useLocale();
@@ -43,15 +19,14 @@ export default function Menu() {
     { key: 'teishoku', label: t('tabs.teishoku') },
   ];
 
-  const teishoku = [
-    { key: 'arataki', price: '1,780', excl: '1,620' },
-    { key: 'niyakana', price: '1,980', excl: '1,800' },
-    { key: 'sashimi', price: '2,230', excl: '2,030' },
-    { key: 'sashimiNi', price: '2,670', excl: '2,430' },
-    { key: 'tempura', price: '1,980', excl: '1,800' },
-    { key: 'sashimiTempura', price: '2,670', excl: '2,430' },
-    { key: 'taicha', price: '2,230', excl: '2,030' },
-  ] as const;
+  // 仮画像プレースホルダー
+  const PlaceholderImage = () => (
+    <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl bg-gray-900">
+      <div className="absolute inset-0 flex items-center justify-center text-kinari/40">
+        <p className="text-sm tracking-widest">画像準備中</p>
+      </div>
+    </div>
+  );
 
   return (
     <section
@@ -60,10 +35,11 @@ export default function Menu() {
     >
       <div className="max-w-[1200px] mx-auto">
         <p className="section-label !text-kin-light before:!bg-kin-light">{t('label')}</p>
-        <h2 className="section-title [&_.sub]:!text-kin mb-12">
+        <h2 className="section-title [&_.sub]:!text-kin mb-6">
           {t('titleLine1')}
           <span className="sub">{t('sub')}</span>
         </h2>
+        <p className="text-[14px] text-kinari/70 mb-12 font-light max-w-[600px]">{t('intro')}</p>
 
         {/* タブ */}
         <div className="flex border-b border-kinari/20 mb-16 overflow-x-auto no-scrollbar">
@@ -87,17 +63,7 @@ export default function Menu() {
         {/* 海鮮丼 */}
         {active === 'kaisendon' && (
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
-            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
-              <Image
-                src="/images/kaisen-don.jpg"
-                alt={t('kaisendon.name')}
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
-                style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
-            </div>
+            <PlaceholderImage />
             <div>
               <div className="mb-8">
                 <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20">
@@ -114,17 +80,29 @@ export default function Menu() {
                     </span>
                   </div>
                   <div className="text-right flex-shrink-0">
-                    <Price yen="¥2,890" excl="2,610" />
+                    <div className="font-cormorant text-[20px] text-kin-light block">
+                      ¥{t('kaisendon.price')}
+                    </div>
+                    <span className="text-[10px] text-clay mt-0.5 tracking-[0.1em] block font-light">
+                      {t('taxIncl')} ¥{t('kaisendon.priceIncl')}
+                    </span>
                   </div>
                 </div>
               </div>
-              <p className="text-[14px] leading-[2] text-kinari/70 mb-8 font-light">{t('kaisendon.desc')}</p>
+              <p className="text-[14px] leading-[2] text-kinari/70 mb-8 font-light">
+                {t('kaisendon.desc')}
+              </p>
               <div className="mt-8 p-6 bg-kinari/5 border border-kinari/10">
                 <div className="flex justify-between items-baseline">
                   <span className="text-[15px] tracking-[0.08em] font-light">{t('kaisendon.bowlOnly')}</span>
-                  <span className="text-[15px] text-kin-light">
-                    <Price yen="¥2,200" excl="2,000" />
-                  </span>
+                  <div>
+                    <div className="font-cormorant text-[18px] text-kin-light block text-right">
+                      ¥{t('kaisendon.bowlOnlyPrice')}
+                    </div>
+                    <span className="text-[10px] text-clay tracking-[0.1em] block font-light text-right">
+                      {t('taxIncl')} ¥{t('kaisendon.bowlOnlyPriceIncl')}
+                    </span>
+                  </div>
                 </div>
               </div>
               <p className="text-[11px] text-kinari/50 mt-8 tracking-[0.1em] leading-[1.9] font-light">
@@ -137,17 +115,7 @@ export default function Menu() {
         {/* 朝日膳 */}
         {active === 'asahizen' && (
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
-            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
-              <Image
-                src="/images/asahi-teishoku.jpg"
-                alt={t('asahizen.name')}
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
-                style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
-            </div>
+            <PlaceholderImage />
             <div>
               <div className="mb-8">
                 <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20">
@@ -164,11 +132,18 @@ export default function Menu() {
                     </span>
                   </div>
                   <div className="text-right flex-shrink-0">
-                    <Price yen="¥3,800" excl="3,450" />
+                    <div className="font-cormorant text-[20px] text-kin-light block">
+                      ¥{t('asahizen.price')}
+                    </div>
+                    <span className="text-[10px] text-clay mt-0.5 tracking-[0.1em] block font-light">
+                      {t('taxIncl')} ¥{t('asahizen.priceIncl')}
+                    </span>
                   </div>
                 </div>
               </div>
-              <p className="text-[14px] leading-[2] text-kinari/70 mb-8 font-light">{t('asahizen.desc')}</p>
+              <p className="text-[14px] leading-[2] text-kinari/70 mb-8 font-light">
+                {t('asahizen.desc')}
+              </p>
               <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] font-light">
                 {t('asahizen.note')}
               </p>
@@ -179,17 +154,7 @@ export default function Menu() {
         {/* 釜めし膳 */}
         {active === 'kamameshi' && (
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
-            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
-              <Image
-                src="/images/kamameshi.jpg"
-                alt={t('kamameshi.name')}
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
-                style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
-            </div>
+            <PlaceholderImage />
             <div>
               <div className="mb-8">
                 <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20">
@@ -206,36 +171,52 @@ export default function Menu() {
                     </span>
                   </div>
                   <div className="text-right flex-shrink-0">
-                    <Price yen="¥3,700〜" excl="3,360〜" />
+                    <div className="font-cormorant text-[20px] text-kin-light block">
+                      ¥{t('kamameshi.price')}～
+                    </div>
+                    <span className="text-[10px] text-clay mt-0.5 tracking-[0.1em] block font-light">
+                      {t('taxIncl')} ¥{t('kamameshi.priceIncl')}～
+                    </span>
                   </div>
                 </div>
               </div>
-              <p className="text-[14px] leading-[2] text-kinari/70 mb-8 font-light">{t('kamameshi.desc')}</p>
+              <p className="text-[14px] leading-[2] text-kinari/70 mb-8 font-light">
+                {t('kamameshi.desc')}
+              </p>
 
               <div className="mb-8 p-6 bg-kinari/5 border border-kinari/10">
-                <p
-                  className={`text-[12px] tracking-[0.2em] text-kin-light mb-4 font-light ${
-                    isJa ? 'font-cormorant italic' : 'font-mincho not-italic'
-                  }`}
-                >
+                <p className={`text-[12px] tracking-[0.2em] text-kin-light mb-4 font-light ${
+                  isJa ? 'font-cormorant italic' : 'font-mincho not-italic'
+                }`}>
                   {t('kamameshi.ingredientsTitle')}
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {['ing1', 'ing2', 'ing3', 'ing4'].map((k) => (
-                    <div key={k} className="text-[13px] tracking-[0.05em] font-light">
-                      <span className="text-kin-light mr-2">・</span>
-                      {t(`kamameshi.${k}` as never)}
-                    </div>
-                  ))}
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="text-[13px] tracking-[0.05em] font-light">
+                    <span className="text-kin-light mr-2">・</span>{t('kamameshi.ing1')}
+                  </div>
+                  <div className="text-[13px] tracking-[0.05em] font-light">
+                    <span className="text-kin-light mr-2">・</span>{t('kamameshi.ing2')}
+                  </div>
+                  <div className="text-[13px] tracking-[0.05em] font-light">
+                    <span className="text-kin-light mr-2">・</span>{t('kamameshi.ing3')}
+                  </div>
+                  <div className="text-[13px] tracking-[0.05em] font-light">
+                    <span className="text-kin-light mr-2">・</span>{t('kamameshi.ing4')}
+                  </div>
                 </div>
               </div>
 
               <div className="mb-6 p-5 bg-kinari/5 border border-kinari/10">
                 <div className="flex justify-between items-baseline">
                   <span className="text-[15px] tracking-[0.08em] font-light">{t('kamameshi.potOnly')}</span>
-                  <span className="text-[15px] text-kin-light">
-                    <Price yen="¥1,700" excl="1,550" />
-                  </span>
+                  <div>
+                    <div className="font-cormorant text-[16px] text-kin-light block text-right">
+                      ¥{t('kamameshi.potOnlyPrice')}
+                    </div>
+                    <span className="text-[10px] text-clay tracking-[0.1em] block font-light text-right">
+                      {t('taxIncl')} ¥{t('kamameshi.potOnlyPriceIncl')}
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -249,24 +230,29 @@ export default function Menu() {
         {/* 定食 */}
         {active === 'teishoku' && (
           <div className="animate-fadeUp">
-            <div className="grid divide-y divide-dotted divide-kinari/15">
-              {teishoku.map((item) => (
-                <div
-                  key={item.key}
-                  className="flex justify-between items-baseline gap-4 py-5 hover:bg-kinari/5 px-4 -mx-4 transition-colors"
-                >
-                  <span className="text-[15px] tracking-[0.08em] flex-1 font-light">
-                    {t(`teishoku.${item.key}` as never)}
-                  </span>
-                  <span className="text-[15px] text-kin-light flex-shrink-0">
-                    <Price yen={`¥${item.price}`} excl={item.excl} />
-                  </span>
-                </div>
-              ))}
-            </div>
-            <p className="text-[11px] text-kinari/50 mt-8 tracking-[0.1em] leading-[1.9] font-light">
-              {t('teishoku.note')}
+            <p className="text-[14px] text-kinari/70 mb-8 font-light pb-8 border-b border-kinari/20">
+              {t('teishoku.intro')}
             </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {Object.entries(t.raw('teishoku')).map(([key, value]: any) => {
+                if (key === 'intro' || typeof value !== 'object') return null;
+                return (
+                  <div key={key} className="flex justify-between items-baseline gap-4 py-4 px-6 bg-kinari/5 border border-kinari/10 hover:border-kinari/30 transition-colors">
+                    <span className="text-[15px] tracking-[0.08em] font-light flex-1">
+                      {value.name}
+                    </span>
+                    <div className="text-right flex-shrink-0">
+                      <div className="font-cormorant text-[16px] text-kin-light block">
+                        ¥{value.price}
+                      </div>
+                      <span className="text-[10px] text-clay tracking-[0.1em] block font-light">
+                        {t('taxIncl')} ¥{value.priceIncl}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
       </div>

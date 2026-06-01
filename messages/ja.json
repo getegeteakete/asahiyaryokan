@@ -40,6 +40,7 @@
     "label": "お品書き",
     "titleLine1": "本日の、お品書き。",
     "sub": "o-shinagaki",
+    "intro": "毎朝、生け簀より獲れたて新鮮な活魚を職人の手で調理いたします。",
     "taxIncl": "税込",
     "taxExcl": "税抜",
     "tabs": {
@@ -51,19 +52,27 @@
     "kaisendon": {
       "name": "海鮮丼",
       "enName": "Seafood Rice Bowl",
+      "price": "2,610",
+      "priceIncl": "2,890",
       "desc": "海鮮丼、小鉢、茶碗蒸し、あら汁、漬物。",
       "bowlOnly": "海鮮丼単品",
+      "bowlOnlyPrice": "2,000",
+      "bowlOnlyPriceIncl": "2,200",
       "note": "※ 季節により内容が異なる場合がございます。"
     },
     "asahizen": {
       "name": "朝日膳",
       "enName": "The Asahi Set",
+      "price": "3,450",
+      "priceIncl": "3,800",
       "desc": "刺身、さざえ刺し、魚煮物、天ぷら、小鉢、茶碗蒸し、ご飯、あら汁、漬物。",
       "note": "※ 季節により内容が異なる場合がございます。"
     },
     "kamameshi": {
       "name": "朝日釜めし膳",
       "enName": "Clay-pot Rice Set",
+      "price": "3,360",
+      "priceIncl": "3,700",
       "desc": "生け簀より新鮮な具材を入れて炊き上げます。",
       "ingredientsTitle": "釜めしの具（一品お選びください）",
       "ing1": "じゃこ・わかめ",
@@ -71,17 +80,19 @@
       "ing3": "サザエ",
       "ing4": "アワビ",
       "potOnly": "釜めし単品",
+      "potOnlyPrice": "1,700",
+      "potOnlyPriceIncl": "1,870",
       "note": "※ ご提供までに 20〜25 分程度いただきます。\n※ 季節により内容が異なる場合がございます。"
     },
     "teishoku": {
-      "arataki": "荒炊き定食",
-      "niyakana": "煮魚定食",
-      "sashimi": "刺身定食",
-      "sashimiNi": "刺身煮魚定食",
-      "tempura": "天ぷら定食",
-      "sashimiTempura": "刺身天ぷら定食",
-      "taicha": "鯛茶定食",
-      "note": "※ 毎朝、生け簀より獲れたて新鮮な魚にて調理しています。"
+      "intro": "1,780円～各種取り揃えております。毎朝、生け簀より獲れたて新鮮な魚にて調理しています。",
+      "arataki": { "name": "荒炊き定食", "price": "1,620", "priceIncl": "1,780" },
+      "niyakana": { "name": "煮魚定食", "price": "1,800", "priceIncl": "1,980" },
+      "sashimi": { "name": "刺身定食", "price": "2,030", "priceIncl": "2,230" },
+      "sashimiNi": { "name": "刺身煮魚定食", "price": "2,430", "priceIncl": "2,670" },
+      "tempura": { "name": "天ぷら定食", "price": "1,800", "priceIncl": "1,980" },
+      "sashimiTempura": { "name": "刺身天ぷら定食", "price": "2,430", "priceIncl": "2,670" },
+      "taicha": { "name": "鯛茶定食", "price": "2,030", "priceIncl": "2,230" }
     }
   },
   "kaiseki": {
