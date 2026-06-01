@@ -22,8 +22,8 @@
       scroll-snap-stop: normal;
     }
     html {
-      /* 全デバイスでしっかり吸着 */
-      scroll-snap-type: y mandatory;
+      /* 近づいたときだけ優しく吸着（縦長セクションでユーザーと喧嘩しない） */
+      scroll-snap-type: y proximity;
     }
   }
 
