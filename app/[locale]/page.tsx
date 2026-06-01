@@ -2,6 +2,7 @@ import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import PictureGallery from '@/components/PictureGallery';
 import VideoSection from '@/components/VideoSection';
 import Menu from '@/components/Menu';
 import Kaiseki from '@/components/Kaiseki';
@@ -28,6 +29,7 @@ export default async function HomePage({
         <WaveDivider top="sumi" bottom="kinari-light" />
         <About />
         <WaveDivider top="kinari-light" bottom="kinari" flip />
+        <PictureGallery />
         <VideoSection />
         <WaveDivider top="kinari" bottom="sumi" />
         <Menu />
