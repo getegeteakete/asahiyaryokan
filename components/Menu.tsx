@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Deco from './Deco';
 
 export default function Menu() {
   const t = useTranslations('menu');
@@ -11,9 +12,11 @@ export default function Menu() {
   return (
     <section
       id="menu"
-      className="relative z-[2] bg-sumi text-kinari px-6 md:px-10 py-24 md:py-36"
+      className="relative z-[2] bg-sumi text-kinari px-6 md:px-10 py-24 md:py-36 overflow-hidden"
     >
-      <div className="max-w-[1200px] mx-auto">
+      <Deco type="shrimp" className="top-20 left-[-30px] md:left-4" size={220} opacity={0.07} rotate={20} variant="light" />
+      <Deco type="crab" className="bottom-24 right-[-30px] md:right-6" size={240} opacity={0.06} rotate={-10} variant="light" />
+      <div className="max-w-[1200px] mx-auto relative z-[2]">
         <p className="section-label !text-kin-light before:!bg-kin-light">{t('label')}</p>
         <h2 className="section-title [&_.sub]:!text-kin mb-6">
           {t('titleLine1')}

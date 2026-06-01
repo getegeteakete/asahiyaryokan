@@ -1,12 +1,14 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Deco from './Deco';
 
 export default function About() {
   const t = useTranslations('about');
 
   return (
-    <section className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36">
-      <div className="max-w-[1200px] mx-auto">
+    <section className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36 overflow-hidden">
+      <Deco type="squid" className="top-12 right-[-40px] md:right-8" size={280} opacity={0.06} rotate={-15} variant="dark" />
+      <div className="max-w-[1200px] mx-auto relative z-[2]">
         <div className="grid gap-16 md:grid-cols-2 md:gap-24 md:items-start">
           <div className="md:pt-4">
             <p className="section-label text-shu">{t('label')}</p>

@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Deco from './Deco';
 
 export default function Kaiseki() {
   const t = useTranslations('kaiseki');
@@ -7,8 +8,9 @@ export default function Kaiseki() {
   const features = ['feat1', 'feat2', 'feat3', 'feat4'] as const;
 
   return (
-    <section id="kaiseki" className="relative z-[2] bg-gradient-to-br from-kinari to-washi px-6 md:px-10 py-24 md:py-36">
-      <div className="max-w-[1200px] mx-auto">
+    <section id="kaiseki" className="relative z-[2] bg-gradient-to-br from-kinari to-washi px-6 md:px-10 py-24 md:py-36 overflow-hidden">
+      <Deco type="tokkuri" className="top-16 right-6 md:right-16" size={150} opacity={0.07} rotate={8} variant="dark" />
+      <div className="max-w-[1200px] mx-auto relative z-[2]">
         <p className="section-label text-shu">{t('label')}</p>
         <h2 className="section-title mb-12">
           {t('titleLine1')}

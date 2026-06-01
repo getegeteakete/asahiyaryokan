@@ -1,13 +1,15 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import Deco from './Deco';
 
 export default function Banquet() {
   const t = useTranslations('banquet');
   const features = ['feat1', 'feat2', 'feat3', 'feat4'] as const;
 
   return (
-    <section id="banquet" className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36">
-      <div className="max-w-[1200px] mx-auto">
+    <section id="banquet" className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36 overflow-hidden">
+      <Deco type="crab" className="top-20 left-[-40px] md:left-8" size={200} opacity={0.05} rotate={15} variant="dark" />
+      <div className="max-w-[1200px] mx-auto relative z-[2]">
         <p className="section-label text-shu">{t('label')}</p>
         <h2 className="section-title mb-12">
           {t('titleLine1')}
