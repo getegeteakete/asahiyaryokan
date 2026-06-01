@@ -3,6 +3,13 @@
     "title": "Asahiya | Kappō Minshuku in Itoshima · Keya",
     "description": "Asahiya — a kappō minshuku in Itoshima, Fukuoka. Seafood bowls, kamameshi and kaiseki served from our live tanks, with rooms overlooking the fishing harbor."
   },
+  "bottomBar": {
+    "hoursLabel": "Hours",
+    "hoursLunch": "Lunch 11:30〜",
+    "hoursDinner": "Dinner by reservation",
+    "cta": "Reserve · Contact",
+    "phone": "092-328-2634"
+  },
   "sideNav": {
     "lunch": "Lunch",
     "kaiseki": "Kaiseki",

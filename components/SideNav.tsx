@@ -34,7 +34,7 @@ export default function SideNav() {
 
   return (
     <nav
-      className={`hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 z-[90] flex-col gap-2 transition-all duration-500 ${
+      className={`hidden md:flex fixed right-0 top-[45%] -translate-y-1/2 z-[90] flex-col gap-2 transition-all duration-500 ${
         isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
       }`}
       aria-label="クイックメニュー"

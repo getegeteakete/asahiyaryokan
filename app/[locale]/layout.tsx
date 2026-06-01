@@ -6,6 +6,7 @@ import { Shippori_Mincho_B1, Cormorant_Garamond } from 'next/font/google';
 import { routing } from '@/i18n/routing';
 import ScrollToTop from '@/components/ScrollToTop';
 import SideNav from '@/components/SideNav';
+import BottomBar from '@/components/BottomBar';
 import '../globals.css';
 
 const mincho = Shippori_Mincho_B1({
@@ -75,6 +76,7 @@ export default async function LocaleLayout({
           {children}
           <SideNav />
           <ScrollToTop />
+          <BottomBar />
         </NextIntlClientProvider>
       </body>
     </html>
