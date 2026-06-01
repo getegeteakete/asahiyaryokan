@@ -10,17 +10,19 @@
 
   html {
     scroll-behavior: smooth;
-    /* 固定ヘッダー分の余白を確保してスナップ位置を調整 */
-    scroll-padding-top: 80px;
+    /* 固定ヘッダー＋見出しが心地よい位置に来るよう余白を確保 */
+    scroll-padding-top: 72px;
   }
 
-  /* セクション吸着（ゆるやかな近接スナップ・PCのみ） */
+  /* セクション吸着（見出し付近にしっかり吸着・PCのみ） */
   @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
     html {
-      scroll-snap-type: y proximity;
+      /* mandatory でしっかり吸着 */
+      scroll-snap-type: y mandatory;
     }
     .snap-section {
       scroll-snap-align: start;
+      /* 長いセクションでもスクロール途中で止まれる */
       scroll-snap-stop: normal;
     }
   }
