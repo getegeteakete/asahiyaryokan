@@ -100,13 +100,41 @@
     },
     "teishoku": {
       "intro": "1,780円～各種取り揃えております。毎朝、生け簀より獲れたて新鮮な魚にて調理しています。",
-      "arataki": { "name": "荒炊き定食", "price": "1,620", "priceIncl": "1,780" },
-      "niyakana": { "name": "煮魚定食", "price": "1,800", "priceIncl": "1,980" },
-      "sashimi": { "name": "刺身定食", "price": "2,030", "priceIncl": "2,230" },
-      "sashimiNi": { "name": "刺身煮魚定食", "price": "2,430", "priceIncl": "2,670" },
-      "tempura": { "name": "天ぷら定食", "price": "1,800", "priceIncl": "1,980" },
-      "sashimiTempura": { "name": "刺身天ぷら定食", "price": "2,430", "priceIncl": "2,670" },
-      "taicha": { "name": "鯛茶定食", "price": "2,030", "priceIncl": "2,230" }
+      "arataki": {
+        "name": "荒炊き定食",
+        "price": "1,620",
+        "priceIncl": "1,780"
+      },
+      "niyakana": {
+        "name": "煮魚定食",
+        "price": "1,800",
+        "priceIncl": "1,980"
+      },
+      "sashimi": {
+        "name": "刺身定食",
+        "price": "2,030",
+        "priceIncl": "2,230"
+      },
+      "sashimiNi": {
+        "name": "刺身煮魚定食",
+        "price": "2,430",
+        "priceIncl": "2,670"
+      },
+      "tempura": {
+        "name": "天ぷら定食",
+        "price": "1,800",
+        "priceIncl": "1,980"
+      },
+      "sashimiTempura": {
+        "name": "刺身天ぷら定食",
+        "price": "2,430",
+        "priceIncl": "2,670"
+      },
+      "taicha": {
+        "name": "鯛茶定食",
+        "price": "2,030",
+        "priceIncl": "2,230"
+      }
     }
   },
   "kaiseki": {
@@ -185,5 +213,9 @@
   },
   "footer": {
     "copy": "© Asahiya · Itoshima, Fukuoka"
+  },
+  "kaiseki-showcase": {
+    "kaiseki-desc": "季節の彩りを一品一品に込めた、朝日屋のプレミアム懐石。新鮮な活魚と地元の厳選素材を使用した、贅沢で洗練されたお食事をお楽しみください。",
+    "kamameshi-desc": "いけす直送の活魚の具材を丁寧に炊き上げた、香り高い釜めし。ご提供までに20〜25分頂戴いたします。季節ごとの旬の具材でご用意いたします。"
   }
 }

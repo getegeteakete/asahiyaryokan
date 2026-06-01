@@ -97,7 +97,7 @@ export default function Menu() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28">
           <div className="relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
             <Image
-              src="/images/040-釜めし膳007-1536x1024.jpg"
+              src="/images/017-kamameshi-deluxe.jpg"
               alt={t('kamameshi.name')}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"

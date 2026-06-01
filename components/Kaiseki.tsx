@@ -64,7 +64,7 @@ export default function Kaiseki() {
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="relative aspect-square overflow-hidden shadow-md group">
             <Image
-              src="/images/050-懐石007-1024x683.jpg"
+              src="/images/016-kaiseki-deluxe.jpg"
               alt="懐石料理"
               fill
               sizes="(min-width: 768px) 25vw, 50vw"
