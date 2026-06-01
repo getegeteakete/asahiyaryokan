@@ -27,7 +27,8 @@ export default function Header() {
   }, [menuOpen]);
 
   const navItems = [
-    { key: 'menu', href: '#menu' },
+    { key: 'lunch', href: '#menu' },
+    { key: 'kaiseki', href: '#kaiseki' },
     { key: 'banquet', href: '#banquet' },
     { key: 'stay', href: '#stay' },
     { key: 'info', href: '#info' },
@@ -114,34 +115,53 @@ export default function Header() {
         </div>
       </header>
 
-      {/* モバイル用フルスクリーンメニュー */}
+      {/* モバイル用フルスクリーンメニュー - 和風デザイン */}
       <div
-        className={`md:hidden fixed inset-0 z-[105] bg-sumi transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 z-[105] bg-gradient-to-b from-sumi via-sumi to-sumi-soft transition-all duration-500 ${
           menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
+        {/* 和風パターン背景 */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px)',
+            backgroundSize: '100% 4px'
+          }} />
+        </div>
+
         {/* 閉じるボタン（明確に表示） */}
         <button
           type="button"
           onClick={() => setMenuOpen(false)}
           aria-label={t('close')}
-          className="absolute top-5 right-5 z-[120] w-10 h-10 flex items-center justify-center text-kinari border border-kinari/30 rounded-full hover:bg-kinari/10 transition-colors"
+          className="absolute top-5 right-5 z-[120] w-10 h-10 flex items-center justify-center text-kin-light border border-kin-light/40 rounded-full hover:bg-kin-light/10 transition-colors"
         >
           <span className="text-[22px] leading-none">×</span>
         </button>
 
         <div className="h-full flex flex-col items-center justify-center px-6">
-          <nav className="flex flex-col items-center gap-8">
+          {/* ロゴ・タイトル */}
+          <div className="mb-12 text-center">
+            <h1 className="font-mincho text-kin-light text-[28px] tracking-[0.3em] mb-2">
+              朝日屋
+            </h1>
+            <p className="font-cormorant italic text-kin-light/70 text-[12px] tracking-[0.3em]">
+              ASAHIYA
+            </p>
+          </div>
+
+          {/* ナビゲーションメニュー */}
+          <nav className="flex flex-col items-center w-full max-w-[280px]">
             {navItems.map((item, index) => (
               <button
                 key={item.key}
                 type="button"
                 onClick={() => handleNavClick(item.href)}
-                className={`text-kinari font-mincho text-[28px] tracking-[0.2em] hover:text-kin-light transition-all duration-300 ${
+                className={`w-full py-4 px-6 text-kin-light font-mincho text-[20px] tracking-[0.15em] border-b border-kin-light/20 hover:bg-kin-light/5 hover:border-kin-light/40 transition-all duration-300 text-center ${
                   menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
                 style={{
-                  transitionDelay: menuOpen ? `${index * 100 + 200}ms` : '0ms',
+                  transitionDelay: menuOpen ? `${index * 80 + 150}ms` : '0ms',
                 }}
               >
                 {t(item.key)}
@@ -149,13 +169,14 @@ export default function Header() {
             ))}
           </nav>
 
+          {/* 電話番号 */}
           <a
             href="tel:+81923282634"
             onClick={() => setMenuOpen(false)}
-            className={`mt-16 font-cormorant text-kin-light text-[20px] tracking-[0.2em] border border-kin-light/40 px-8 py-3 hover:bg-kin-light hover:text-sumi transition-all duration-300 ${
+            className={`mt-12 font-cormorant text-kin-light text-[18px] tracking-[0.2em] border border-kin-light/40 px-8 py-3 hover:bg-kin-light hover:text-sumi transition-all duration-300 ${
               menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
             }`}
-            style={{ transitionDelay: menuOpen ? '600ms' : '0ms' }}
+            style={{ transitionDelay: menuOpen ? '550ms' : '0ms' }}
           >
             092-328-2634
           </a>
