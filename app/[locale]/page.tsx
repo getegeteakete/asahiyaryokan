@@ -5,6 +5,7 @@ import About from '@/components/About';
 import VideoSection from '@/components/VideoSection';
 import Menu from '@/components/Menu';
 import Kaiseki from '@/components/Kaiseki';
+import Banquet from '@/components/Banquet';
 import Stay from '@/components/Stay';
 import Press from '@/components/Press';
 import Access from '@/components/Access';
@@ -27,6 +28,7 @@ export default async function HomePage({
         <VideoSection />
         <Menu />
         <Kaiseki />
+        <Banquet />
         <Stay />
         <Press />
         <Access />

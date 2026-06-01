@@ -40,6 +40,7 @@
     "label": "Menu",
     "titleLine1": "Today's Table.",
     "sub": "お品書き",
+    "intro": "Each morning, we prepare the freshest live fish from our tanks by hand.",
     "taxIncl": "tax in",
     "taxExcl": "excl.",
     "tabs": {
@@ -51,19 +52,27 @@
     "kaisendon": {
       "name": "Kaisen-don",
       "enName": "海鮮丼",
+      "price": "2,610",
+      "priceIncl": "2,890",
       "desc": "Seafood bowl, small dish, chawanmushi, fish-bone miso, pickles.",
       "bowlOnly": "Bowl Only",
+      "bowlOnlyPrice": "2,000",
+      "bowlOnlyPriceIncl": "2,200",
       "note": "※ Contents may vary by season."
     },
     "asahizen": {
       "name": "Asahi-zen",
       "enName": "朝日膳",
+      "price": "3,450",
+      "priceIncl": "3,800",
       "desc": "Sashimi, sazae sashimi, simmered fish, tempura, small dish, chawanmushi, rice, fish-bone miso, pickles.",
       "note": "※ Contents may vary by season."
     },
     "kamameshi": {
       "name": "Asahi Kamameshi Set",
       "enName": "朝日釜めし膳",
+      "price": "3,360",
+      "priceIncl": "3,700",
       "desc": "Fresh ingredients from our tanks, steamed with rice in a small clay pot.",
       "ingredientsTitle": "Choose one ingredient",
       "ing1": "Whitebait & Wakame",
@@ -71,17 +80,19 @@
       "ing3": "Turban Shell",
       "ing4": "Abalone",
       "potOnly": "Clay-pot Only",
+      "potOnlyPrice": "1,700",
+      "potOnlyPriceIncl": "1,870",
       "note": "※ Preparation takes 20–25 minutes.\n※ Contents may vary by season."
     },
     "teishoku": {
-      "arataki": "Arataki (Simmered Fish Head) Set",
-      "niyakana": "Simmered Fish Set",
-      "sashimi": "Sashimi Set",
-      "sashimiNi": "Sashimi & Simmered Fish Set",
-      "tempura": "Tempura Set",
-      "sashimiTempura": "Sashimi & Tempura Set",
-      "taicha": "Sea Bream Chazuke Set",
-      "note": "※ Prepared each morning with fish from our live tanks."
+      "intro": "From ¥1,780, a variety of set meals. Prepared each morning with fish from our live tanks.",
+      "arataki": { "name": "Arataki (Simmered Fish Head) Set", "price": "1,620", "priceIncl": "1,780" },
+      "niyakana": { "name": "Simmered Fish Set", "price": "1,800", "priceIncl": "1,980" },
+      "sashimi": { "name": "Sashimi Set", "price": "2,030", "priceIncl": "2,230" },
+      "sashimiNi": { "name": "Sashimi & Simmered Fish Set", "price": "2,430", "priceIncl": "2,670" },
+      "tempura": { "name": "Tempura Set", "price": "1,800", "priceIncl": "1,980" },
+      "sashimiTempura": { "name": "Sashimi & Tempura Set", "price": "2,430", "priceIncl": "2,670" },
+      "taicha": { "name": "Sea Bream Chazuke Set", "price": "2,030", "priceIncl": "2,230" }
     }
   },
   "kaiseki": {
@@ -96,6 +107,18 @@
     "feat2": "Microbus pickup available",
     "feat3": "Karaoke available (extra charge)",
     "feat4": "Minimum: 5 guests"
+  },
+  "banquet": {
+    "label": "Banquet · Memorial",
+    "titleLine1": "Gatherings in",
+    "titleLine2": "our grand hall.",
+    "sub": "ご宴会・ご法要",
+    "body1": "We offer a spacious grand hall for banquets, memorial services, and group gatherings. Relax in a Japanese-style space overlooking the boat harbour.",
+    "body2": "Microbus pickup service is available, and karaoke facilities are fully equipped — ideal for group banquets.",
+    "feat1": "Grand hall (max capacity)",
+    "feat2": "Microbus pickup available",
+    "feat3": "Karaoke available (extra charge)",
+    "feat4": "For memorials & various gatherings"
   },
   "stay": {
     "label": "Stay",

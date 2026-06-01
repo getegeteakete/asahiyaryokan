@@ -23,7 +23,7 @@ export default function Kaiseki() {
             <div className="absolute inset-4 border border-kin/50 z-[2] pointer-events-none" />
             <div className="relative w-full aspect-[4/5] overflow-hidden shadow-lg">
               <Image
-                src="/images/kaiseki-01.jpg"
+                src="/images/050-懐石003-1536x1024.jpg"
                 alt={t('titleLine2')}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
@@ -55,6 +55,50 @@ export default function Kaiseki() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* 懐石ギャラリー */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="relative aspect-square overflow-hidden shadow-md group">
+            <Image
+              src="/images/050-懐石007-1024x683.jpg"
+              alt="懐石料理"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-500"
+              style={{ filter: 'sepia(0.06) saturate(1.02)' }}
+            />
+          </div>
+          <div className="relative aspect-square overflow-hidden shadow-md group">
+            <Image
+              src="/images/050-懐石009-1536x1024.jpg"
+              alt="懐石料理"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-500"
+              style={{ filter: 'sepia(0.06) saturate(1.02)' }}
+            />
+          </div>
+          <div className="relative aspect-square overflow-hidden shadow-md group">
+            <Image
+              src="/images/3958_0-1024x1024.jpg"
+              alt="伊勢海老の活造り"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-500"
+              style={{ filter: 'sepia(0.06) saturate(1.02)' }}
+            />
+          </div>
+          <div className="relative aspect-square overflow-hidden shadow-md group">
+            <Image
+              src="/images/kaiseki-01.jpg"
+              alt="懐石料理"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-500"
+              style={{ filter: 'sepia(0.06) saturate(1.02)' }}
+            />
           </div>
         </div>
       </div>

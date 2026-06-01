@@ -251,25 +251,35 @@ export default function Menu() {
         {/* 定食 */}
         {active === 'teishoku' && (
           <div className="animate-fadeUp">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start mb-12">
-              <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl lg:mb-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+              <div className="relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
                 <Image
                   src="/images/010-朝日定食005-1024x683.jpg"
-                  alt="定食"
+                  alt="朝日定食"
                   fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover"
                   style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
+                <span className="absolute bottom-4 left-4 text-[12px] tracking-[0.2em] text-kinari/90 font-light">朝日定食</span>
               </div>
-              <div className="flex items-center">
-                <p className="text-[14px] text-kinari/70 mb-0 font-light">
-                  {t('teishoku.intro')}
-                </p>
+              <div className="relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/020-鯛茶漬け000-scaled-e1703142049719-1024x580.jpg"
+                  alt="鯛茶定食"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                  style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
+                <span className="absolute bottom-4 left-4 text-[12px] tracking-[0.2em] text-kinari/90 font-light">鯛茶定食</span>
               </div>
             </div>
-            
+            <p className="text-[14px] text-kinari/70 mb-8 font-light pb-8 border-b border-kinari/20">
+              {t('teishoku.intro')}
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {Object.entries(t.raw('teishoku')).map(([key, value]: any) => {
                 if (key === 'intro' || typeof value !== 'object') return null;
