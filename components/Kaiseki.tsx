@@ -93,7 +93,7 @@ export default function Kaiseki() {
           </div>
           <div className="relative aspect-square overflow-hidden shadow-md group">
             <Image
-              src="/images/3958_0-1024x1024.jpg"
+              src="/images/003-ise-ebi-new.jpg"
               alt="伊勢海老の活造り"
               fill
               sizes="(min-width: 768px) 25vw, 50vw"
