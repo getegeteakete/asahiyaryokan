@@ -26,7 +26,7 @@ export default function About() {
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden shadow-lg mb-4">
               <Image
-                src="/images/asahi-teishoku.jpg"
+                src="/images/011-asahi-teishoku-new.jpg"
                 alt={t('titleLine1')}
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
