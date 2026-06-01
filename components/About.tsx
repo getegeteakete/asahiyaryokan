@@ -35,15 +35,31 @@ export default function About() {
               />
             </div>
             <div className="relative aspect-[3/2] overflow-hidden shadow-lg">
+              {/* いけス風背景 */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d7b] via-[#2a5f8f] to-[#1a3d5f]" />
+              <div 
+                className="absolute inset-0 opacity-20" 
+                style={{
+                  backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px), repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 6px)',
+                  backgroundSize: '4px 4px'
+                }}
+              />
+              {/* 水紋エフェクト */}
+              <div className="absolute inset-0 opacity-25" style={{
+                backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%)',
+              }} />
+              
+              {/* 活魚の画像 */}
               <Image
-                src="/images/110-生け簀002-1536x1024.jpg"
+                src="/images/110-ikesus-fresh.jpg"
                 alt="生け簀の活魚"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover mix-blend-screen"
                 style={{ filter: 'saturate(1.05) brightness(1.02)' }}
               />
-              <div className="absolute bottom-3 left-3 text-[11px] tracking-[0.2em] text-white/90 font-light drop-shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-t from-sumi/20 to-transparent" />
+              <div className="absolute bottom-3 left-3 text-[11px] tracking-[0.2em] text-white/90 font-light drop-shadow-lg z-10">
                 いけすの活魚
               </div>
             </div>

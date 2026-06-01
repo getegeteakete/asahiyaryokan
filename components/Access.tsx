@@ -54,15 +54,46 @@ export default function Access() {
             <span className="absolute bottom-4 left-4 text-[12px] tracking-[0.2em] text-kinari font-light drop-shadow-lg">店内</span>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden shadow-xl group">
+            {/* いけス風背景 - 藍色の木目調パターン */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1e4d7b] via-[#2a5f8f] to-[#1a3d5f]" />
+            <div 
+              className="absolute inset-0 opacity-15" 
+              style={{
+                backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px), repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 6px)',
+                backgroundSize: '4px 4px'
+              }}
+            />
+            {/* 水紋エフェクト */}
+            <div className="absolute inset-0 opacity-20" style={{
+              backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%)',
+            }} />
+            
+            {/* 活魚の画像 */}
             <Image
-              src="/images/110-生け簀002-1536x1024.jpg"
+              src="/images/110-ikesus-fresh.jpg"
               alt="朝日屋 いけす"
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              className="object-cover group-hover:scale-105 transition-transform duration-700 mix-blend-screen"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-sumi/30 to-transparent" />
-            <span className="absolute bottom-4 left-4 text-[12px] tracking-[0.2em] text-kinari font-light drop-shadow-lg">いけす</span>
+            
+            {/* グラデーションオーバーレイ（暗く見せて、テキストを見えやすく） */}
+            <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 via-transparent to-transparent" />
+            
+            {/* 「生け簀」ラベル - デザイン性を持たせた */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="text-center">
+                <p className="text-[24px] md:text-[32px] font-mincho text-kin-light/80 tracking-[0.3em] drop-shadow-lg mb-2">
+                  生け簀
+                </p>
+                <p className="text-[10px] font-cormorant italic text-kin-light/60 tracking-[0.2em] drop-shadow-md">
+                  IKESUS · FRESH FISH TANKS
+                </p>
+              </div>
+            </div>
+            
+            {/* 左下のラベル（従来のスタイル） */}
+            <span className="absolute bottom-4 left-4 text-[12px] tracking-[0.2em] text-kinari font-light drop-shadow-lg z-10">いけす</span>
           </div>
         </div>
 
