@@ -15,7 +15,6 @@ export default function Header() {
     router.replace(pathname, { locale: next });
   };
 
-  // メニューが開いている時はスクロールを無効化
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = 'hidden';
@@ -32,7 +31,7 @@ export default function Header() {
     { key: 'banquet', href: '#banquet' },
     { key: 'stay', href: '#stay' },
     { key: 'info', href: '#info' },
-  ];
+  ] as const;
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
@@ -53,7 +52,22 @@ export default function Header() {
             {t('brandSub')}
           </span>
         </div>
-        <div className="flex items-center gap-3 md:gap-4">
+
+        <div className="flex items-center gap-4 md:gap-8">
+          {/* PC用 横並びナビゲーション */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <button
+                key={item.key}
+                type="button"
+                onClick={() => handleNavClick(item.href)}
+                className="font-mincho text-[14px] tracking-[0.2em] text-sumi hover:text-shu transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-shu after:transition-all hover:after:w-full"
+              >
+                {t(item.key)}
+              </button>
+            ))}
+          </nav>
+
           {/* 言語切替 */}
           <div className="flex items-center font-cormorant text-xs tracking-[0.15em] border border-sumi/[0.15] rounded-sm overflow-hidden">
             <button
@@ -77,54 +91,64 @@ export default function Header() {
               EN
             </button>
           </div>
-          {/* ハンバーガーボタン */}
+
+          {/* ハンバーガーボタン（モバイルのみ表示） */}
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? t('close') : 'Menu'}
             aria-expanded={menuOpen}
-            className="relative w-7 h-6 flex flex-col justify-center items-center z-[110]"
+            className="md:hidden relative w-7 h-6 flex flex-col justify-center items-center z-[110]"
           >
             <span
-              className={`absolute left-0 w-full h-px bg-sumi transition-all duration-300 ${
-                menuOpen ? 'top-[11px] rotate-45' : 'top-1'
+              className={`absolute left-0 w-full h-0.5 transition-all duration-300 ${
+                menuOpen ? 'top-[11px] rotate-45 bg-kinari' : 'top-1 bg-sumi'
               }`}
             />
             <span
-              className={`absolute left-0 w-full h-px bg-sumi transition-all duration-300 ${
-                menuOpen ? 'top-[11px] -rotate-45' : 'top-[18px]'
+              className={`absolute left-0 w-full h-0.5 transition-all duration-300 ${
+                menuOpen ? 'top-[11px] -rotate-45 bg-kinari' : 'top-[18px] bg-sumi'
               }`}
             />
           </button>
         </div>
       </header>
 
-      {/* フルスクリーンメニューオーバーレイ */}
+      {/* モバイル用フルスクリーンメニュー */}
       <div
-        className={`fixed inset-0 z-[105] bg-sumi transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 z-[105] bg-sumi transition-all duration-500 ${
           menuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
+        {/* 閉じるボタン（明確に表示） */}
+        <button
+          type="button"
+          onClick={() => setMenuOpen(false)}
+          aria-label={t('close')}
+          className="absolute top-5 right-5 z-[120] w-10 h-10 flex items-center justify-center text-kinari border border-kinari/30 rounded-full hover:bg-kinari/10 transition-colors"
+        >
+          <span className="text-[22px] leading-none">×</span>
+        </button>
+
         <div className="h-full flex flex-col items-center justify-center px-6">
-          <nav className="flex flex-col items-center gap-8 md:gap-10">
+          <nav className="flex flex-col items-center gap-8">
             {navItems.map((item, index) => (
               <button
                 key={item.key}
                 type="button"
                 onClick={() => handleNavClick(item.href)}
-                className={`text-kinari font-mincho text-[28px] md:text-[36px] tracking-[0.2em] hover:text-kin-light transition-all duration-300 ${
+                className={`text-kinari font-mincho text-[28px] tracking-[0.2em] hover:text-kin-light transition-all duration-300 ${
                   menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
                 style={{
                   transitionDelay: menuOpen ? `${index * 100 + 200}ms` : '0ms',
                 }}
               >
-                {t(item.key as 'menu' | 'banquet' | 'stay' | 'info')}
+                {t(item.key)}
               </button>
             ))}
           </nav>
 
-          {/* 電話番号CTA */}
           <a
             href="tel:+81923282634"
             onClick={() => setMenuOpen(false)}
