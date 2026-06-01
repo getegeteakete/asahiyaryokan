@@ -26,7 +26,7 @@ export default function Hero() {
 
       <div className="relative z-[2] w-full max-w-[1200px] mx-auto">
         <p
-          className={`mb-8 text-[12px] tracking-[0.5em] uppercase text-kin-light animate-fadeUp [animation-delay:0.2s] [animation-fill-mode:backwards] opacity-90 ${
+          className={`mb-8 text-[12px] tracking-[0.5em] uppercase text-kin-light animate-fadeUp [animation-delay:0.2s] [animation-fill-mode:backwards] opacity-90 font-light ${
             isJa ? 'font-cormorant italic' : 'font-mincho'
           }`}
         >
@@ -34,25 +34,32 @@ export default function Hero() {
         </p>
 
         <h1
-          className={`font-medium text-kinari mb-10 animate-fadeUp [animation-delay:0.1s] ${
+          className={`font-medium text-kinari mb-10 animate-fadeUp [animation-delay:0.1s] leading-tight ${
             isJa
-              ? 'font-mincho text-[clamp(48px,13vw,104px)] tracking-[0.15em] leading-[1.1]'
-              : 'font-cormorant italic font-normal text-[clamp(40px,9vw,86px)] tracking-[0.02em] leading-[1.05]'
+              ? 'font-mincho text-[clamp(42px,9vw,80px)] tracking-[0.12em]'
+              : 'font-cormorant italic font-normal text-[clamp(40px,8vw,72px)] tracking-[0.02em]'
           }`}
           style={{
-            writingMode: isJa ? 'vertical-rl' : 'horizontal-tb',
-            maxHeight: isJa ? '55vh' : 'none',
-            textShadow: '0 2px 8px rgba(0,0,0,0.3)'
+            textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+            writingMode: 'horizontal-tb'
           }}
         >
-          {t('titleLine1')}
-          {isJa && <br />}
-          {t('titleLine2')}
-          <span className="text-kin">{t('titleAccent')}</span>
-          {t('titleLine3')}
+          {isJa ? (
+            <>
+              新鮮な海の恵みを、
+              <br />
+              <span className="text-kin">{t('titleAccent')}</span>
+            </>
+          ) : (
+            <>
+              Fresh Seafood
+              <br />
+              <span className="text-kin">Experience</span>
+            </>
+          )}
         </h1>
 
-        <p className="text-[14px] leading-[2.1] max-w-[500px] text-kinari/85 animate-fadeUp [animation-delay:0.4s] [animation-fill-mode:backwards] font-light tracking-[0.05em]">
+        <p className="text-[14px] leading-[2.1] max-w-[560px] text-kinari/85 animate-fadeUp [animation-delay:0.4s] [animation-fill-mode:backwards] font-light tracking-[0.05em]">
           {t('lead1')}
           <br />
           {t('lead2')}
@@ -62,12 +69,11 @@ export default function Hero() {
       </div>
 
       <div
-        className={`absolute bottom-12 text-[10px] tracking-[0.35em] text-kin-light/70 ${
+        className={`absolute bottom-12 text-[10px] tracking-[0.35em] text-kin-light/70 font-light ${
           isJa
             ? 'right-6 md:right-10 font-cormorant italic'
-            : 'left-6 md:left-10 font-mincho'
+            : 'right-6 md:right-10 font-mincho'
         }`}
-        style={{ writingMode: isJa ? 'vertical-rl' : 'horizontal-tb' }}
       >
         {t('meta')}
       </div>
