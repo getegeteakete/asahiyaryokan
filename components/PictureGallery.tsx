@@ -10,6 +10,8 @@ const GALLERY_ITEMS = [
   { src: '/images/013-shellfish-sashimi.jpg', labelJa: '貝類の刺身盛り', labelEn: 'Shellfish Sashimi' },
   { src: '/images/014-white-fish.jpg', labelJa: 'お造り盛り合わせ', labelEn: 'Sashimi Assortment' },
   { src: '/images/015-dining-room.jpg', labelJa: '店内の風景', labelEn: 'Dining Room' },
+  { src: '/images/040-釜めし膳007-1536x1024.jpg', labelJa: '釜めし膳', labelEn: 'Kamameshi' },
+  { src: '/images/050-懐石007-1024x683.jpg', labelJa: '懐石料理', labelEn: 'Kaiseki Course' },
 ];
 
 export default function PictureGallery() {
