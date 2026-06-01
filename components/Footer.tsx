@@ -11,7 +11,7 @@ export default function Footer() {
   const dishImages = [
     { src: '/images/001-kaiseki-01.jpg', label: '懐石' },
     { src: '/images/002-kaisen-don-new.jpg', label: '海鮮丼' },
-    { src: '/images/006-sashimi-platter.jpg', label: '刺身盛り' },
+    { src: '/images/016-kaiseki-deluxe.jpg', label: 'いけす御膳' },
     { src: '/images/007-white-fish-sashimi.jpg', label: 'お造り' },
     { src: '/images/011-kaiseki-set.jpg', label: '懐石膳' },
     { src: '/images/003-ise-ebi-new.jpg', label: '伊勢えび' },
