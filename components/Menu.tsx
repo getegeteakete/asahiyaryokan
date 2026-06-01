@@ -167,7 +167,7 @@ export default function Menu() {
           <div className="grid md:grid-cols-2 gap-4 mb-10">
             <div className="relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
               <Image
-                src="/images/011-asahi-teishoku-new.jpg"
+                src="/images/021-taichaten-teishoku-new.jpg"
                 alt="朝日定食"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
@@ -179,7 +179,7 @@ export default function Menu() {
             </div>
             <div className="relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
               <Image
-                src="/images/021-taichaten-teishoku-new.jpg"
+                src="/images/011-asahi-teishoku-new.jpg"
                 alt="鯛茶定食"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
