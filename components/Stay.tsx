@@ -101,14 +101,14 @@ export default function Stay() {
             name={t('plan01Name')}
             weekday={{ incl: '11,750', excl: '10,500' }}
             weekend={{ incl: '12,850', excl: '11,500' }}
-            image="/images/room-01.jpg"
+            image="/images/room-wa.png"
           />
           <PlanCard
             tag={t('plan02Tag')}
             name={t('plan02Name')}
             weekday={{ incl: '13,400', excl: '12,000' }}
             weekend={{ incl: '14,500', excl: '13,000' }}
-            image="/images/room-02.jpg"
+            image="/images/120-宴会部屋004-1024x683.jpg"
           />
         </div>
 

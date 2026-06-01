@@ -55,14 +55,14 @@ export default function Access() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden shadow-xl group">
             <Image
-              src="/images/room-wa.png"
-              alt="朝日屋 客室"
+              src="/images/110-生け簀002-1536x1024.jpg"
+              alt="朝日屋 いけす"
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-sumi/30 to-transparent" />
-            <span className="absolute bottom-4 left-4 text-[12px] tracking-[0.2em] text-kinari font-light drop-shadow-lg">客室</span>
+            <span className="absolute bottom-4 left-4 text-[12px] tracking-[0.2em] text-kinari font-light drop-shadow-lg">いけす</span>
           </div>
         </div>
 
