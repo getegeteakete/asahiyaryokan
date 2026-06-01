@@ -7,7 +7,7 @@ export default function Footer() {
   const t = useTranslations('footer');
   const tNav = useTranslations('nav');
 
-  // フッター用の料理写真8枚
+  // フッター用の料理写真10枚
   const dishImages = [
     { src: '/images/001-kaiseki-01.jpg', label: '懐石' },
     { src: '/images/002-kaisen-don-new.jpg', label: '海鮮丼' },
@@ -17,6 +17,8 @@ export default function Footer() {
     { src: '/images/003-ise-ebi-new.jpg', label: '伊勢えび' },
     { src: '/images/013-shellfish-sashimi.jpg', label: '貝類' },
     { src: '/images/017-kamameshi-deluxe.jpg', label: '釜めし' },
+    { src: '/images/040-釜めし膳007-1536x1024.jpg', label: '釜めし膳' },
+    { src: '/images/014-white-fish.jpg', label: '白身魚' },
   ];
 
   // フッターメニュー
