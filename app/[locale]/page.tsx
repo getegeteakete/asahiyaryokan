@@ -27,53 +27,61 @@ export default async function HomePage({
     <>
       <Header />
       <main>
-        {/* ファーストビューはそのまま表示 */}
+        {/* ファーストビュー（snapあり：Heroコンポーネント内で指定） */}
         <Hero />
         <WaveDivider top="sumi" bottom="kinari-light" />
 
+        {/* ▼ 主要セクションのみ吸着（snap） */}
         <FadeInSection variant="up" snap>
           <About />
         </FadeInSection>
         <WaveDivider top="kinari-light" bottom="kinari" flip />
 
-        <FadeInSection variant="scale" snap>
+        {/* サブ：リビールのみ（吸着なし） */}
+        <FadeInSection variant="scale">
           <PictureGallery />
         </FadeInSection>
 
-        <FadeInSection variant="fade" snap>
+        <FadeInSection variant="fade">
           <KaisekiShowcase />
         </FadeInSection>
 
-        <FadeInSection variant="scale" snap>
+        <FadeInSection variant="scale">
           <VideoSection />
         </FadeInSection>
         <WaveDivider top="kinari" bottom="sumi" />
 
+        {/* ▼ 昼食：吸着 */}
         <FadeInSection variant="up" snap>
           <Menu />
         </FadeInSection>
         <WaveDivider top="sumi" bottom="kinari" flip />
 
+        {/* ▼ 懐石料理：吸着 */}
         <FadeInSection variant="up" snap>
           <Kaiseki />
         </FadeInSection>
         <WaveDivider top="washi" bottom="kinari-light" />
 
-        <FadeInSection variant="up" snap>
+        {/* サブ：リビールのみ */}
+        <FadeInSection variant="up">
           <Banquet />
         </FadeInSection>
         <WaveDivider top="kinari-light" bottom="washi" flip />
 
+        {/* ▼ ご宿泊：吸着 */}
         <FadeInSection variant="up" snap>
           <Stay />
         </FadeInSection>
         <WaveDivider top="washi" bottom="kinari" />
 
-        <FadeInSection variant="fade" snap>
+        {/* サブ：リビールのみ */}
+        <FadeInSection variant="fade">
           <Press />
         </FadeInSection>
         <WaveDivider top="kinari" bottom="sumi" flip />
 
+        {/* ▼ 店舗情報：吸着 */}
         <FadeInSection variant="up" snap>
           <Access />
         </FadeInSection>

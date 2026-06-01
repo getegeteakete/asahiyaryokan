@@ -21,18 +21,8 @@
       /* 長いセクションでもスクロール途中で止まれる */
       scroll-snap-stop: normal;
     }
-  }
-
-  /* スマホ・タブレット：ゆるやかに吸着（長いセクションでも快適） */
-  @media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
     html {
-      scroll-snap-type: y proximity;
-    }
-  }
-
-  /* PC：見出し付近にしっかり吸着 */
-  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
-    html {
+      /* 全デバイスでしっかり吸着 */
       scroll-snap-type: y mandatory;
     }
   }
