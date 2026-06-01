@@ -198,6 +198,48 @@ export default function Menu() {
               );
             })}
           </div>
+
+          {/* 一品料理ギャラリー */}
+          <div className="mt-16 pt-12 border-t border-kinari/20">
+            <p className={`text-[12px] tracking-[0.3em] text-kin-light mb-8 ${isJa ? 'font-cormorant italic' : 'font-mincho not-italic'}`}>
+              {isJa ? '一品料理・お造り' : 'À LA CARTE'}
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="relative aspect-[4/3] overflow-hidden shadow-2xl group">
+                <Image
+                  src="/images/ika-sashimi.png"
+                  alt="いか刺し"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-sumi/50 to-transparent" />
+                <span className="absolute bottom-4 left-4 text-[13px] tracking-[0.2em] text-kinari font-light">いか刺し</span>
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden shadow-2xl group">
+                <Image
+                  src="/images/sazae.png"
+                  alt="さざえ"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-sumi/50 to-transparent" />
+                <span className="absolute bottom-4 left-4 text-[13px] tracking-[0.2em] text-kinari font-light">さざえ</span>
+              </div>
+              <div className="relative aspect-[4/3] overflow-hidden shadow-2xl group">
+                <Image
+                  src="/images/mozuku.png"
+                  alt="もずく"
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-sumi/50 to-transparent" />
+                <span className="absolute bottom-4 left-4 text-[13px] tracking-[0.2em] text-kinari font-light">もずく</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

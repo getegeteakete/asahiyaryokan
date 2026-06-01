@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Deco from './Deco';
 
 function InfoRow({ label, children }: { label: string; children: React.ReactNode }) {
@@ -27,6 +28,43 @@ export default function Access() {
           {t('titleLine1')}
           <span className="sub">{t('sub')}</span>
         </h2>
+
+        {/* お店の写真ギャラリー */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+          <div className="relative aspect-[4/3] overflow-hidden shadow-xl md:col-span-2 md:row-span-2 md:aspect-auto group">
+            <Image
+              src="/images/exterior.png"
+              alt="朝日屋 外観"
+              fill
+              sizes="(min-width: 768px) 66vw, 100vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-sumi/30 to-transparent" />
+            <span className="absolute bottom-5 left-5 text-[13px] tracking-[0.2em] text-kinari font-light drop-shadow-lg">外観</span>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden shadow-xl group">
+            <Image
+              src="/images/interior.png"
+              alt="朝日屋 店内"
+              fill
+              sizes="(min-width: 768px) 33vw, 100vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-sumi/30 to-transparent" />
+            <span className="absolute bottom-4 left-4 text-[12px] tracking-[0.2em] text-kinari font-light drop-shadow-lg">店内</span>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden shadow-xl group">
+            <Image
+              src="/images/room-wa.png"
+              alt="朝日屋 客室"
+              fill
+              sizes="(min-width: 768px) 33vw, 100vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-sumi/30 to-transparent" />
+            <span className="absolute bottom-4 left-4 text-[12px] tracking-[0.2em] text-kinari font-light drop-shadow-lg">客室</span>
+          </div>
+        </div>
 
         <div className="grid mb-12">
           <InfoRow label={t('address')}>{t('addressValue')}</InfoRow>
