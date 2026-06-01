@@ -7,6 +7,7 @@ import { routing } from '@/i18n/routing';
 import ScrollToTop from '@/components/ScrollToTop';
 import SideNav from '@/components/SideNav';
 import BottomBar from '@/components/BottomBar';
+import SmoothScroll from '@/components/SmoothScroll';
 import '../globals.css';
 
 const mincho = Shippori_Mincho_B1({
@@ -73,10 +74,12 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${mincho.variable} ${cormorant.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
-          {children}
-          <SideNav />
-          <ScrollToTop />
-          <BottomBar />
+          <SmoothScroll>
+            {children}
+            <SideNav />
+            <ScrollToTop />
+            <BottomBar />
+          </SmoothScroll>
         </NextIntlClientProvider>
       </body>
     </html>

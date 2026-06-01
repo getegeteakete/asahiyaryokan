@@ -9,23 +9,15 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    /* スムーズ化は Lenis が担当（CSS の smooth とは競合するため未使用） */
     /* 固定ヘッダー＋見出しが心地よい位置に来るよう余白を確保 */
     scroll-padding-top: 72px;
   }
 
-  /* セクション吸着の共通設定 */
-  @media (prefers-reduced-motion: no-preference) {
-    .snap-section {
-      scroll-snap-align: start;
-      /* 長いセクションでもスクロール途中で止まれる */
-      scroll-snap-stop: normal;
-    }
-    html {
-      /* 近づいたときだけ優しく吸着（縦長セクションでユーザーと喧嘩しない） */
-      scroll-snap-type: y proximity;
-    }
-  }
+  /* セクション吸着（scroll-snap）は撤去。
+     理由: iOS/WebKit では scroll-snap が慣性スクロールを壊し、
+     スマホで「加速したり急に止まる」ジャンクの原因になるため。
+     滑らかさは Lenis（PC）＋OS純正の慣性（スマホ）で実現する。 */
 
   body {
     @apply bg-kinari text-sumi antialiased overflow-x-hidden;
@@ -45,8 +37,15 @@
     background-size: 200px 200px, 240px 240px, 180px 180px;
     pointer-events: none;
     z-index: 1;
-    mix-blend-mode: multiply;
     opacity: 0.6;
+  }
+
+  /* mix-blend-mode は重い合成処理。マウス環境（PC）だけに限定し、
+     タッチ環境（スマホ/タブレット）ではスクロール中の再描画ジャンクを防ぐため外す。 */
+  @media (hover: hover) and (pointer: fine) {
+    body::before {
+      mix-blend-mode: multiply;
+    }
   }
 
   html[lang='en'] body {
