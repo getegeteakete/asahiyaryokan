@@ -50,7 +50,7 @@ export default function Header() {
         {/* ロゴ */}
         <div className="flex items-center">
           <img 
-            src="/images/asahiya-logo.png" 
+            src="/images/logo-black.png" 
             alt="朝日屋 ASAHIYA" 
             className="h-8 md:h-10 w-auto"
           />
