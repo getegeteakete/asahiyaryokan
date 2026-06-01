@@ -7,7 +7,7 @@ export default function Hero() {
   const isJa = locale === 'ja';
 
   return (
-    <section className="relative z-[2] min-h-svh flex items-center px-6 md:px-10 pt-[100px] md:pt-[120px] pb-16 md:pb-20 overflow-hidden">
+    <section className="relative z-[2] min-h-svh flex items-center px-6 md:px-10 pt-[100px] md:pt-[120px] pb-16 md:pb-20 overflow-hidden bg-sumi">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/images/kaiseki-02.jpg"
@@ -16,14 +16,17 @@ export default function Hero() {
           priority
           sizes="100vw"
           className="object-cover"
-          style={{ filter: 'sepia(0.15) saturate(0.9) contrast(0.95)' }}
+          style={{ 
+            filter: 'sepia(0.2) saturate(0.85) contrast(1.05) brightness(0.75)',
+            opacity: 0.6
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-kinari/[0.15] via-kinari/[0.45] to-kinari/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-sumi/30 via-sumi/60 to-sumi/95" />
       </div>
 
       <div className="relative z-[2] w-full max-w-[1200px] mx-auto">
         <p
-          className={`mb-6 text-[13px] tracking-[0.4em] uppercase text-clay animate-fadeUp [animation-delay:0.3s] [animation-fill-mode:backwards] ${
+          className={`mb-8 text-[12px] tracking-[0.5em] uppercase text-kin-light animate-fadeUp [animation-delay:0.2s] [animation-fill-mode:backwards] opacity-90 ${
             isJa ? 'font-cormorant italic' : 'font-mincho'
           }`}
         >
@@ -31,24 +34,25 @@ export default function Hero() {
         </p>
 
         <h1
-          className={`font-medium text-sumi mb-8 animate-fadeUp ${
+          className={`font-medium text-kinari mb-10 animate-fadeUp [animation-delay:0.1s] ${
             isJa
-              ? 'font-mincho text-[clamp(42px,11vw,96px)] tracking-[0.15em] leading-[1.15]'
+              ? 'font-mincho text-[clamp(48px,13vw,104px)] tracking-[0.15em] leading-[1.1]'
               : 'font-cormorant italic font-normal text-[clamp(40px,9vw,86px)] tracking-[0.02em] leading-[1.05]'
           }`}
           style={{
             writingMode: isJa ? 'vertical-rl' : 'horizontal-tb',
-            maxHeight: isJa ? '50vh' : 'none',
+            maxHeight: isJa ? '55vh' : 'none',
+            textShadow: '0 2px 8px rgba(0,0,0,0.3)'
           }}
         >
           {t('titleLine1')}
           {isJa && <br />}
           {t('titleLine2')}
-          <span className="text-shu">{t('titleAccent')}</span>
+          <span className="text-kin">{t('titleAccent')}</span>
           {t('titleLine3')}
         </h1>
 
-        <p className="text-sm leading-[2.2] max-w-[440px] text-sumi-soft animate-fadeUp [animation-delay:0.5s] [animation-fill-mode:backwards]">
+        <p className="text-[14px] leading-[2.1] max-w-[500px] text-kinari/85 animate-fadeUp [animation-delay:0.4s] [animation-fill-mode:backwards] font-light tracking-[0.05em]">
           {t('lead1')}
           <br />
           {t('lead2')}
@@ -58,7 +62,7 @@ export default function Hero() {
       </div>
 
       <div
-        className={`absolute bottom-10 text-[11px] tracking-[0.3em] text-clay ${
+        className={`absolute bottom-12 text-[10px] tracking-[0.35em] text-kin-light/70 ${
           isJa
             ? 'right-6 md:right-10 font-cormorant italic'
             : 'left-6 md:left-10 font-mincho'
@@ -68,7 +72,7 @@ export default function Hero() {
         {t('meta')}
       </div>
 
-      <div className="scroll-hint absolute bottom-[30px] left-1/2 font-cormorant italic text-[10px] tracking-[0.4em] text-clay">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 font-cormorant italic text-[9px] tracking-[0.5em] text-kin-light/50 animate-bounce">
         {t('scroll')}
       </div>
     </section>
