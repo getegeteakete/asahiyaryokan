@@ -59,11 +59,11 @@ export default function Hero() {
           )}
         </h1>
 
-        <p className="text-[14px] leading-[2.1] max-w-[560px] text-kinari/85 animate-fadeUp [animation-delay:0.4s] [animation-fill-mode:backwards] font-light tracking-[0.05em]">
+        <p className="text-[13px] md:text-[14px] leading-[2] md:leading-[2.1] max-w-[560px] text-kinari/85 animate-fadeUp [animation-delay:0.4s] [animation-fill-mode:backwards] font-light tracking-[0.05em]">
           {t('lead1')}
-          <br />
+          <br className="hidden md:inline" />
           {t('lead2')}
-          <br />
+          <br className="hidden md:inline" />
           {t('lead3')}
         </p>
       </div>

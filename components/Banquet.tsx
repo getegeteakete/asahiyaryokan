@@ -6,7 +6,7 @@ export default function Banquet() {
   const features = ['feat1', 'feat2', 'feat3', 'feat4'] as const;
 
   return (
-    <section className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36 border-t border-sumi/10">
+    <section id="banquet" className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36 border-t border-sumi/10">
       <div className="max-w-[1200px] mx-auto">
         <p className="section-label text-shu">{t('label')}</p>
         <h2 className="section-title mb-12">

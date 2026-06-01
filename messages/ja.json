@@ -7,8 +7,10 @@
     "brand": "朝日屋",
     "brandSub": "ASAHIYA",
     "menu": "おしながき",
+    "banquet": "ご宴会",
     "stay": "ご宿泊",
-    "info": "店舗情報"
+    "info": "店舗情報",
+    "close": "閉じる"
   },
   "hero": {
     "eyebrow": "ITOSHIMA · KEYA",

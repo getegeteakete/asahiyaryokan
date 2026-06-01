@@ -22,7 +22,7 @@ export default function About() {
             </div>
           </div>
           <div className="relative">
-            <div className="relative aspect-[4/3] overflow-hidden shadow-lg">
+            <div className="relative aspect-[4/3] overflow-hidden shadow-lg mb-4">
               <Image
                 src="/images/asahi-teishoku.jpg"
                 alt={t('titleLine1')}
@@ -31,6 +31,19 @@ export default function About() {
                 className="object-cover"
                 style={{ filter: 'sepia(0.08) saturate(0.98) brightness(1.02)' }}
               />
+            </div>
+            <div className="relative aspect-[3/2] overflow-hidden shadow-lg">
+              <Image
+                src="/images/110-生け簀002-1536x1024.jpg"
+                alt="生け簀の活魚"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+                style={{ filter: 'saturate(1.05) brightness(1.02)' }}
+              />
+              <div className="absolute bottom-3 left-3 text-[11px] tracking-[0.2em] text-white/90 font-light drop-shadow-lg">
+                いけすの活魚
+              </div>
             </div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-kin/5 -z-10 rounded-full blur-3xl" />
           </div>

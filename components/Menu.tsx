@@ -167,7 +167,7 @@ export default function Menu() {
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
             <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
               <Image
-                src="/images/110-生け簀002-1536x1024.jpg"
+                src="/images/040-釜めし膳007-1536x1024.jpg"
                 alt={t('kamameshi.name')}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
