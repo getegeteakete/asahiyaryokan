@@ -19,15 +19,6 @@ export default function Menu() {
     { key: 'teishoku', label: t('tabs.teishoku') },
   ];
 
-  // 仮画像プレースホルダー
-  const PlaceholderImage = () => (
-    <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl bg-gray-900">
-      <div className="absolute inset-0 flex items-center justify-center text-kinari/40">
-        <p className="text-sm tracking-widest">画像準備中</p>
-      </div>
-    </div>
-  );
-
   return (
     <section
       id="menu"
@@ -63,7 +54,17 @@ export default function Menu() {
         {/* 海鮮丼 */}
         {active === 'kaisendon' && (
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
-            <PlaceholderImage />
+            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
+              <Image
+                src="/images/030-海鮮丼000-1024x683.jpg"
+                alt={t('kaisendon.name')}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+                style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
+            </div>
             <div>
               <div className="mb-8">
                 <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20">
@@ -115,7 +116,17 @@ export default function Menu() {
         {/* 朝日膳 */}
         {active === 'asahizen' && (
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
-            <PlaceholderImage />
+            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
+              <Image
+                src="/images/050-懐石003-1536x1024.jpg"
+                alt={t('asahizen.name')}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+                style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
+            </div>
             <div>
               <div className="mb-8">
                 <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20">
@@ -154,7 +165,17 @@ export default function Menu() {
         {/* 釜めし膳 */}
         {active === 'kamameshi' && (
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
-            <PlaceholderImage />
+            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
+              <Image
+                src="/images/110-生け簀002-1536x1024.jpg"
+                alt={t('kamameshi.name')}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+                style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
+            </div>
             <div>
               <div className="mb-8">
                 <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20">
@@ -230,10 +251,26 @@ export default function Menu() {
         {/* 定食 */}
         {active === 'teishoku' && (
           <div className="animate-fadeUp">
-            <p className="text-[14px] text-kinari/70 mb-8 font-light pb-8 border-b border-kinari/20">
-              {t('teishoku.intro')}
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start mb-12">
+              <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl lg:mb-0">
+                <Image
+                  src="/images/010-朝日定食005-1024x683.jpg"
+                  alt="定食"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                  style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
+              </div>
+              <div className="flex items-center">
+                <p className="text-[14px] text-kinari/70 mb-0 font-light">
+                  {t('teishoku.intro')}
+                </p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {Object.entries(t.raw('teishoku')).map(([key, value]: any) => {
                 if (key === 'intro' || typeof value !== 'object') return null;
                 return (

@@ -4,6 +4,7 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { notFound } from 'next/navigation';
 import { Shippori_Mincho_B1, Cormorant_Garamond } from 'next/font/google';
 import { routing } from '@/i18n/routing';
+import ScrollToTop from '@/components/ScrollToTop';
 import '../globals.css';
 
 const mincho = Shippori_Mincho_B1({
@@ -71,6 +72,7 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages} locale={locale}>
           {children}
+          <ScrollToTop />
         </NextIntlClientProvider>
       </body>
     </html>
