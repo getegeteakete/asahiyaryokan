@@ -8,6 +8,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import SideNav from '@/components/SideNav';
 import BottomBar from '@/components/BottomBar';
 import SmoothScroll from '@/components/SmoothScroll';
+import SnapSections from '@/components/SnapSections';
 import '../globals.css';
 
 const mincho = Shippori_Mincho_B1({
@@ -79,6 +80,7 @@ export default async function LocaleLayout({
             <SideNav />
             <ScrollToTop />
             <BottomBar />
+            <SnapSections />
           </SmoothScroll>
         </NextIntlClientProvider>
       </body>
