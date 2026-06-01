@@ -10,6 +10,19 @@
 
   html {
     scroll-behavior: smooth;
+    /* 固定ヘッダー分の余白を確保してスナップ位置を調整 */
+    scroll-padding-top: 80px;
+  }
+
+  /* セクション吸着（ゆるやかな近接スナップ・PCのみ） */
+  @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-snap-type: y proximity;
+    }
+    .snap-section {
+      scroll-snap-align: start;
+      scroll-snap-stop: normal;
+    }
   }
 
   body {
@@ -105,4 +118,48 @@
 }
 .no-scrollbar {
   scrollbar-width: none;
+}
+
+/* ===== スクロールリビールアニメーション（高級路線・ゆったり） ===== */
+.reveal {
+  /* 上品なイージング：ゆっくり始まり優雅に減速（easeOutExpo風） */
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-duration: 1.3s;
+  will-change: opacity, transform;
+}
+
+/* 下からふわりと立ち上がる */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity var(--reveal-duration) var(--reveal-ease),
+    transform var(--reveal-duration) var(--reveal-ease);
+}
+
+/* 静かにフェードイン */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity calc(var(--reveal-duration) + 0.3s) var(--reveal-ease);
+}
+
+/* わずかに拡がりながら現れる（写真・主役向け） */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(24px);
+  transition: opacity var(--reveal-duration) var(--reveal-ease),
+    transform var(--reveal-duration) var(--reveal-ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* モーション軽減設定では即表示 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

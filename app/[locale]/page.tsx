@@ -13,6 +13,7 @@ import Press from '@/components/Press';
 import Access from '@/components/Access';
 import Footer from '@/components/Footer';
 import WaveDivider from '@/components/WaveDivider';
+import FadeInSection from '@/components/FadeInSection';
 
 export default async function HomePage({
   params,
@@ -26,25 +27,56 @@ export default async function HomePage({
     <>
       <Header />
       <main>
+        {/* ファーストビューはそのまま表示 */}
         <Hero />
         <WaveDivider top="sumi" bottom="kinari-light" />
-        <About />
+
+        <FadeInSection variant="up" snap>
+          <About />
+        </FadeInSection>
         <WaveDivider top="kinari-light" bottom="kinari" flip />
-        <PictureGallery />
-        <KaisekiShowcase />
-        <VideoSection />
+
+        <FadeInSection variant="scale" snap>
+          <PictureGallery />
+        </FadeInSection>
+
+        <FadeInSection variant="fade" snap>
+          <KaisekiShowcase />
+        </FadeInSection>
+
+        <FadeInSection variant="scale" snap>
+          <VideoSection />
+        </FadeInSection>
         <WaveDivider top="kinari" bottom="sumi" />
-        <Menu />
+
+        <FadeInSection variant="up" snap>
+          <Menu />
+        </FadeInSection>
         <WaveDivider top="sumi" bottom="kinari" flip />
-        <Kaiseki />
+
+        <FadeInSection variant="up" snap>
+          <Kaiseki />
+        </FadeInSection>
         <WaveDivider top="washi" bottom="kinari-light" />
-        <Banquet />
+
+        <FadeInSection variant="up" snap>
+          <Banquet />
+        </FadeInSection>
         <WaveDivider top="kinari-light" bottom="washi" flip />
-        <Stay />
+
+        <FadeInSection variant="up" snap>
+          <Stay />
+        </FadeInSection>
         <WaveDivider top="washi" bottom="kinari" />
-        <Press />
+
+        <FadeInSection variant="fade" snap>
+          <Press />
+        </FadeInSection>
         <WaveDivider top="kinari" bottom="sumi" flip />
-        <Access />
+
+        <FadeInSection variant="up" snap>
+          <Access />
+        </FadeInSection>
       </main>
       <Footer />
     </>
