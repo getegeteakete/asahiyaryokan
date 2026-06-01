@@ -87,45 +87,47 @@ export default function Menu() {
         {/* 海鮮丼 */}
         {active === 'kaisendon' && (
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
-            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-xl">
+            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
               <Image
                 src="/images/kaisen-don.jpg"
                 alt={t('kaisendon.name')}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
-                style={{ filter: 'brightness(0.88) saturate(1.08)' }}
+                style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-sumi/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
             </div>
             <div>
-              <div className="flex justify-between items-baseline gap-4 pb-6 border-b border-kinari/20 mb-6">
-                <div>
-                  <h3 className="text-[24px] font-medium tracking-[0.08em] mb-2">
-                    {t('kaisendon.name')}
-                  </h3>
-                  <span
-                    className={`block text-[12px] tracking-[0.2em] text-kin-light font-light ${
-                      isJa ? 'font-cormorant italic' : 'font-mincho not-italic text-[11px]'
-                    }`}
-                  >
-                    {t('kaisendon.enName')}
-                  </span>
-                </div>
-                <div className="text-right">
-                  <Price yen="¥2,890" excl="2,610" />
+              <div className="mb-8">
+                <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20">
+                  <div className="flex-1">
+                    <h3 className="text-[26px] font-medium tracking-[0.08em] mb-2">
+                      {t('kaisendon.name')}
+                    </h3>
+                    <span
+                      className={`block text-[12px] tracking-[0.2em] text-kin-light font-light ${
+                        isJa ? 'font-cormorant italic' : 'font-mincho not-italic text-[11px]'
+                      }`}
+                    >
+                      {t('kaisendon.enName')}
+                    </span>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <Price yen="¥2,890" excl="2,610" />
+                  </div>
                 </div>
               </div>
-              <p className="text-[14px] leading-[1.9] text-kinari/70 mb-8">{t('kaisendon.desc')}</p>
-              <div className="mt-6 p-6 bg-kinari/5 border border-kinari/10">
-                <div className="flex justify-between items-baseline mb-2">
-                  <span className="text-[15px] tracking-[0.08em]">{t('kaisendon.bowlOnly')}</span>
+              <p className="text-[14px] leading-[2] text-kinari/70 mb-8 font-light">{t('kaisendon.desc')}</p>
+              <div className="mt-8 p-6 bg-kinari/5 border border-kinari/10">
+                <div className="flex justify-between items-baseline">
+                  <span className="text-[15px] tracking-[0.08em] font-light">{t('kaisendon.bowlOnly')}</span>
                   <span className="text-[15px] text-kin-light">
                     <Price yen="¥2,200" excl="2,000" />
                   </span>
                 </div>
               </div>
-              <p className="text-[11px] text-kinari/50 mt-6 tracking-[0.1em] leading-[1.9]">
+              <p className="text-[11px] text-kinari/50 mt-8 tracking-[0.1em] leading-[1.9] font-light">
                 {t('kaisendon.note')}
               </p>
             </div>
@@ -135,37 +137,39 @@ export default function Menu() {
         {/* 朝日膳 */}
         {active === 'asahizen' && (
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
-            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-xl">
+            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
               <Image
                 src="/images/asahi-teishoku.jpg"
                 alt={t('asahizen.name')}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
-                style={{ filter: 'brightness(0.88) saturate(1.08)' }}
+                style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-sumi/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
             </div>
             <div>
-              <div className="flex justify-between items-baseline gap-4 pb-6 border-b border-kinari/20 mb-6">
-                <div>
-                  <h3 className="text-[24px] font-medium tracking-[0.08em] mb-2">
-                    {t('asahizen.name')}
-                  </h3>
-                  <span
-                    className={`block text-[12px] tracking-[0.2em] text-kin-light font-light ${
-                      isJa ? 'font-cormorant italic' : 'font-mincho not-italic text-[11px]'
-                    }`}
-                  >
-                    {t('asahizen.enName')}
-                  </span>
-                </div>
-                <div className="text-right">
-                  <Price yen="¥3,800" excl="3,450" />
+              <div className="mb-8">
+                <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20">
+                  <div className="flex-1">
+                    <h3 className="text-[26px] font-medium tracking-[0.08em] mb-2">
+                      {t('asahizen.name')}
+                    </h3>
+                    <span
+                      className={`block text-[12px] tracking-[0.2em] text-kin-light font-light ${
+                        isJa ? 'font-cormorant italic' : 'font-mincho not-italic text-[11px]'
+                      }`}
+                    >
+                      {t('asahizen.enName')}
+                    </span>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <Price yen="¥3,800" excl="3,450" />
+                  </div>
                 </div>
               </div>
-              <p className="text-[14px] leading-[1.9] text-kinari/70 mb-8">{t('asahizen.desc')}</p>
-              <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9]">
+              <p className="text-[14px] leading-[2] text-kinari/70 mb-8 font-light">{t('asahizen.desc')}</p>
+              <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] font-light">
                 {t('asahizen.note')}
               </p>
             </div>
@@ -175,40 +179,42 @@ export default function Menu() {
         {/* 釜めし膳 */}
         {active === 'kamameshi' && (
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start animate-fadeUp">
-            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-xl">
+            <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden shadow-2xl">
               <Image
                 src="/images/kamameshi.jpg"
                 alt={t('kamameshi.name')}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
-                style={{ filter: 'brightness(0.88) saturate(1.08)' }}
+                style={{ filter: 'brightness(0.88) saturate(1.1) contrast(1.05)' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-sumi/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-sumi/40 to-transparent" />
             </div>
             <div>
-              <div className="flex justify-between items-baseline gap-4 pb-6 border-b border-kinari/20 mb-6">
-                <div>
-                  <h3 className="text-[24px] font-medium tracking-[0.08em] mb-2">
-                    {t('kamameshi.name')}
-                  </h3>
-                  <span
-                    className={`block text-[12px] tracking-[0.2em] text-kin-light font-light ${
-                      isJa ? 'font-cormorant italic' : 'font-mincho not-italic text-[11px]'
-                    }`}
-                  >
-                    {t('kamameshi.enName')}
-                  </span>
-                </div>
-                <div className="text-right">
-                  <Price yen="¥3,700〜" excl="3,360〜" />
+              <div className="mb-8">
+                <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20">
+                  <div className="flex-1">
+                    <h3 className="text-[26px] font-medium tracking-[0.08em] mb-2">
+                      {t('kamameshi.name')}
+                    </h3>
+                    <span
+                      className={`block text-[12px] tracking-[0.2em] text-kin-light font-light ${
+                        isJa ? 'font-cormorant italic' : 'font-mincho not-italic text-[11px]'
+                      }`}
+                    >
+                      {t('kamameshi.enName')}
+                    </span>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <Price yen="¥3,700〜" excl="3,360〜" />
+                  </div>
                 </div>
               </div>
-              <p className="text-[14px] leading-[1.9] text-kinari/70 mb-8">{t('kamameshi.desc')}</p>
+              <p className="text-[14px] leading-[2] text-kinari/70 mb-8 font-light">{t('kamameshi.desc')}</p>
 
-              <div className="mb-7 p-6 bg-kinari/5 border border-kinari/10">
+              <div className="mb-8 p-6 bg-kinari/5 border border-kinari/10">
                 <p
-                  className={`text-[12px] tracking-[0.2em] text-kin-light mb-4 ${
+                  className={`text-[12px] tracking-[0.2em] text-kin-light mb-4 font-light ${
                     isJa ? 'font-cormorant italic' : 'font-mincho not-italic'
                   }`}
                 >
@@ -216,7 +222,7 @@ export default function Menu() {
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {['ing1', 'ing2', 'ing3', 'ing4'].map((k) => (
-                    <div key={k} className="text-[13px] tracking-[0.05em]">
+                    <div key={k} className="text-[13px] tracking-[0.05em] font-light">
                       <span className="text-kin-light mr-2">・</span>
                       {t(`kamameshi.${k}` as never)}
                     </div>
@@ -226,14 +232,14 @@ export default function Menu() {
 
               <div className="mb-6 p-5 bg-kinari/5 border border-kinari/10">
                 <div className="flex justify-between items-baseline">
-                  <span className="text-[15px] tracking-[0.08em]">{t('kamameshi.potOnly')}</span>
+                  <span className="text-[15px] tracking-[0.08em] font-light">{t('kamameshi.potOnly')}</span>
                   <span className="text-[15px] text-kin-light">
                     <Price yen="¥1,700" excl="1,550" />
                   </span>
                 </div>
               </div>
 
-              <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] whitespace-pre-line">
+              <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] whitespace-pre-line font-light">
                 {t('kamameshi.note')}
               </p>
             </div>
@@ -249,7 +255,7 @@ export default function Menu() {
                   key={item.key}
                   className="flex justify-between items-baseline gap-4 py-5 hover:bg-kinari/5 px-4 -mx-4 transition-colors"
                 >
-                  <span className="text-[15px] tracking-[0.08em] flex-1">
+                  <span className="text-[15px] tracking-[0.08em] flex-1 font-light">
                     {t(`teishoku.${item.key}` as never)}
                   </span>
                   <span className="text-[15px] text-kin-light flex-shrink-0">
@@ -258,7 +264,7 @@ export default function Menu() {
                 </div>
               ))}
             </div>
-            <p className="text-[11px] text-kinari/50 mt-8 tracking-[0.1em] leading-[1.9]">
+            <p className="text-[11px] text-kinari/50 mt-8 tracking-[0.1em] leading-[1.9] font-light">
               {t('teishoku.note')}
             </p>
           </div>
