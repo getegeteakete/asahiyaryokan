@@ -14,9 +14,9 @@ export default function Footer() {
     { src: '/images/006-sashimi-platter.jpg', label: '刺身盛り' },
     { src: '/images/007-white-fish-sashimi.jpg', label: 'お造り' },
     { src: '/images/011-kaiseki-set.jpg', label: '懐石膳' },
-    { src: '/images/012-kaisen-don.jpg', label: 'カイセン丼' },
+    { src: '/images/003-ise-ebi-new.jpg', label: '伊勢えび' },
     { src: '/images/013-shellfish-sashimi.jpg', label: '貝類' },
-    { src: '/images/016-kaiseki-deluxe.jpg', label: '朝日懐石' },
+    { src: '/images/017-kamameshi-deluxe.jpg', label: '釜めし' },
   ];
 
   // フッターメニュー
