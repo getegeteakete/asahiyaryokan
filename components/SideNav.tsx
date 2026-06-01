@@ -34,7 +34,7 @@ export default function SideNav() {
 
   return (
     <nav
-      className={`hidden md:flex fixed right-0 top-[45%] -translate-y-1/2 z-[90] flex-col gap-2 transition-all duration-500 ${
+      className={`flex fixed right-0 top-[42%] -translate-y-1/2 z-[90] flex-col gap-1.5 md:gap-2 transition-all duration-500 ${
         isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
       }`}
       aria-label="クイックメニュー"
@@ -44,11 +44,11 @@ export default function SideNav() {
           key={item.key}
           type="button"
           onClick={() => handleClick(item.href)}
-          className={`group relative flex items-center justify-center w-12 lg:w-14 py-6 lg:py-7 text-kinari-light ${item.color} transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-x-1`}
+          className={`group relative flex items-center justify-center w-9 md:w-12 lg:w-14 py-4 md:py-6 lg:py-7 text-kinari-light ${item.color} transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-x-1`}
           style={{ borderTopLeftRadius: '6px', borderBottomLeftRadius: '6px' }}
         >
           <span
-            className={`text-[15px] lg:text-[16px] tracking-[0.25em] font-light ${
+            className={`text-[11px] md:text-[15px] lg:text-[16px] tracking-[0.2em] md:tracking-[0.25em] font-light ${
               isJa ? 'font-mincho' : 'font-cormorant italic'
             }`}
             style={{ writingMode: 'vertical-rl' }}

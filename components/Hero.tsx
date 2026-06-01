@@ -43,16 +43,17 @@ export default function Hero() {
               sizes="100vw"
               className="object-cover"
               style={{
-                filter: 'saturate(1.08) contrast(1.03) brightness(0.9)',
+                filter: 'saturate(1.12) contrast(1.02) brightness(1.05)',
                 transform: index === current ? 'scale(1.05)' : 'scale(1)',
                 transition: 'transform 6s ease-out',
               }}
             />
           </div>
         ))}
-        {/* グラデーション */}
-        <div className="absolute inset-0 bg-gradient-to-t from-sumi via-sumi/40 to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-sumi/50 to-transparent" />
+        {/* グラデーション - 写真を明るく見せつつ下部のテキストは読みやすく */}
+        <div className="absolute inset-0 bg-gradient-to-t from-sumi via-sumi/25 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-sumi/90 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-sumi/40 to-transparent" />
       </div>
 
       {/* 現在の料理名ラベル（右上） */}
