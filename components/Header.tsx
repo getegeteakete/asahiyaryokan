@@ -52,7 +52,7 @@ export default function Header() {
           <img 
             src="/images/asahiya-logo.png" 
             alt="朝日屋 ASAHIYA" 
-            className="h-8 md:h-10 w-auto"
+            className="h-[44.8px] md:h-14 w-auto"
           />
         </div>
 
