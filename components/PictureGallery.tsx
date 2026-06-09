@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const GALLERY_ITEMS = [
   { src: '/images/010-ise-ebi-detail.jpg', labelJa: '伊勢海老の活造り', labelEn: 'Ise Ebi' },
-  { src: '/images/011-kaiseki-set.jpg', labelJa: '朝日懐石', labelEn: 'Kaiseki' },
+  { src: '/images/011-kaiseki-set.jpg', labelJa: '朝日膳', labelEn: 'Asahi Set' },
   { src: '/images/012-kaisen-don.jpg', labelJa: '海鮮丼', labelEn: 'Kaisen-don' },
   { src: '/images/013-shellfish-sashimi.jpg', labelJa: '貝類の刺身盛り', labelEn: 'Shellfish Sashimi' },
   { src: '/images/014-white-fish.jpg', labelJa: 'お造り盛り合わせ', labelEn: 'Sashimi Assortment' },
