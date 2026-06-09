@@ -399,7 +399,7 @@
     "lodging": "Lodging",
     "lodgingValue": "Check-in 16:00 / Check-out 10:00 (next day)",
     "payment": "Payment",
-    "paymentValue": "Cash / e-money / Credit (partial)",
+    "paymentValue": "Cash, electronic payment, credit card (except for lodging and group use)",
     "seats": "Seats",
     "seatsValue": "30 seats (dining floor)",
     "parking": "Parking",

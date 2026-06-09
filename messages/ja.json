@@ -399,7 +399,7 @@
     "lodging": "ご宿泊",
     "lodgingValue": "チェックイン 16:00 ／ チェックアウト 翌10:00",
     "payment": "支払方法",
-    "paymentValue": "現金・電子決済・クレジットカード（一部）",
+    "paymentValue": "現金・電子決済・クレジットカード（ご宿泊・団体ご利用を除く）",
     "seats": "座席数",
     "seatsValue": "食事処30席",
     "parking": "駐車場",
