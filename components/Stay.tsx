@@ -4,12 +4,10 @@ import Image from 'next/image';
 type PlanCardProps = {
   tag: string;
   name: string;
-  weekday: { incl: string; excl: string };
-  weekend: { incl: string; excl: string };
   image: string;
 };
 
-function PlanCard({ tag, name, weekday, weekend, image }: PlanCardProps) {
+function PlanCard({ tag, name, image }: PlanCardProps) {
   const t = useTranslations('stay');
   const amenityKeys = [
     'wifi',
@@ -41,29 +39,7 @@ function PlanCard({ tag, name, weekday, weekend, image }: PlanCardProps) {
           {name}
         </h3>
 
-        <div className="space-y-5">
-          <div className="flex justify-between items-baseline gap-4">
-            <span className="text-clay tracking-[0.1em] text-[14px] font-light">{t('weekday')}</span>
-            <div className="text-right">
-              <span className="font-cormorant text-[20px] text-sumi block">¥{weekday.incl}</span>
-              <span className="text-[10px] text-clay mt-0.5 tracking-[0.1em] block font-light">
-                {t('taxExcl')} ¥{weekday.excl}
-              </span>
-            </div>
-          </div>
-
-          <div className="flex justify-between items-baseline gap-4 pt-3 border-t border-dotted border-sumi/10">
-            <span className="text-shu-deep tracking-[0.1em] text-[14px] font-light">{t('weekend')}</span>
-            <div className="text-right">
-              <span className="font-cormorant text-[20px] text-sumi block">¥{weekend.incl}</span>
-              <span className="text-[10px] text-clay mt-0.5 tracking-[0.1em] block font-light">
-                {t('taxExcl')} ¥{weekend.excl}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-7 pt-6 flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2">
           {amenityKeys.map((key) => (
             <span
               key={key}
@@ -95,19 +71,19 @@ export default function Stay() {
           <span className="sub text-kin block text-[16px] font-light tracking-widest mt-4">{t('sub')}</span>
         </h2>
 
+        <p className="text-[15px] leading-[2] text-sumi-soft mb-10 font-light max-w-[760px]">
+          {t('inquiry')}
+        </p>
+
         <div className="grid gap-8 md:grid-cols-2 md:gap-10 mt-8">
           <PlanCard
             tag={t('plan01Tag')}
             name={t('plan01Name')}
-            weekday={{ incl: '11,750', excl: '10,500' }}
-            weekend={{ incl: '12,850', excl: '11,500' }}
             image="/images/room-wa.png"
           />
           <PlanCard
             tag={t('plan02Tag')}
             name={t('plan02Name')}
-            weekday={{ incl: '13,400', excl: '12,000' }}
-            weekend={{ incl: '14,500', excl: '13,000' }}
             image="/images/120-宴会部屋004-1024x683.jpg"
           />
         </div>
