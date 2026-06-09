@@ -124,11 +124,15 @@ export default function Access() {
             </a>
           </InfoRow>
           <InfoRow label={t('hours')}>{t('hoursValue')}</InfoRow>
+          <InfoRow label={t('closed')}>{t('closedValue')}</InfoRow>
+          <InfoRow label={t('lodging')}>{t('lodgingValue')}</InfoRow>
           <InfoRow label={t('payment')}>{t('paymentValue')}</InfoRow>
           <InfoRow label={t('seats')}>{t('seatsValue')}</InfoRow>
           <InfoRow label={t('parking')}>{t('parkingValue')}</InfoRow>
           <InfoRow label={t('other')}>{t('otherValue')}</InfoRow>
         </div>
+
+        <p className="text-[12px] leading-[1.95] text-kinari/55 font-light mb-12">{t('noteValue')}</p>
 
         {/* Googleマップ */}
         <div className="mb-12 relative shadow-xl overflow-hidden">
