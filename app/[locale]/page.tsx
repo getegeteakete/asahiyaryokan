@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/Header';
+import AnnouncementBar from '@/components/AnnouncementBar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import PictureGallery from '@/components/PictureGallery';
@@ -26,6 +27,7 @@ export default async function HomePage({
   return (
     <>
       <Header />
+      <AnnouncementBar />
       <main>
         {/* ファーストビュー（snapあり：Heroコンポーネント内で指定） */}
         <Hero />
