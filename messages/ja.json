@@ -56,87 +56,278 @@
     "label": "お品書き",
     "titleLine1": "本日の、お品書き。",
     "sub": "o-shinagaki",
-    "intro": "毎朝、生け簀より獲れたて新鮮な活魚を職人の手で調理いたします。",
+    "intro": "毎朝、生け簀より獲れたて新鮮な活魚を職人の手で調理いたします。価格は税抜（）内が税込です。",
     "taxIncl": "税込",
     "taxExcl": "税抜",
-    "tabs": {
-      "kaisendon": "海鮮丼",
-      "asahizen": "朝日膳",
-      "kamameshi": "釜めし膳",
-      "teishoku": "定食"
-    },
+    "marketPrice": "時価",
     "kaisendon": {
       "name": "海鮮丼",
       "enName": "Seafood Rice Bowl",
-      "price": "2,610",
-      "priceIncl": "2,890",
-      "desc": "海鮮丼、小鉢、茶碗蒸し、あら汁、漬物。",
-      "bowlOnly": "海鮮丼単品",
-      "bowlOnlyPrice": "2,000",
-      "bowlOnlyPriceIncl": "2,200",
-      "note": "※ 季節により内容が異なる場合がございます。"
+      "price": "2,600",
+      "priceIncl": "2,860",
+      "desc": "海鮮丼、小鉢、茶碗蒸し、あらい汁、漬物。"
+    },
+    "unidon": {
+      "name": "うに丼",
+      "enName": "Sea Urchin Rice Bowl",
+      "price": "3,300",
+      "priceIncl": "3,630",
+      "desc": "うに丼、小鉢、茶碗蒸し、あらい汁、漬物。"
     },
     "asahizen": {
       "name": "朝日膳",
       "enName": "The Asahi Set",
-      "price": "3,450",
-      "priceIncl": "3,800",
-      "desc": "刺身、さざえ刺し、魚煮物、天ぷら、小鉢、茶碗蒸し、ご飯、あら汁、漬物。",
-      "note": "※ 季節により内容が異なる場合がございます。"
+      "price": "3,500",
+      "priceIncl": "3,850",
+      "desc": "刺身、さざえ刺し、魚煮物、天ぷら、小鉢、茶碗蒸し、ご飯、あらい汁、漬物。"
     },
     "kamameshi": {
       "name": "朝日釜めし膳",
       "enName": "Clay-pot Rice Set",
-      "price": "3,360",
-      "priceIncl": "3,700",
-      "desc": "生け簀より新鮮な具材を入れて炊き上げます。",
-      "ingredientsTitle": "釜めしの具（一品お選びください）",
-      "ing1": "じゃこ・わかめ",
-      "ing2": "ウニ",
-      "ing3": "サザエ",
-      "ing4": "アワビ",
-      "potOnly": "釜めし単品",
-      "potOnlyPrice": "1,700",
-      "potOnlyPriceIncl": "1,870",
-      "note": "※ ご提供までに 20〜25 分程度いただきます。\n※ 季節により内容が異なる場合がございます。"
+      "desc": "ご注文後、生け簀より水揚げした新鮮な具材を使い、白米から炊き上げます。",
+      "variantsTitle": "釜めしの具をお選びください",
+      "variants": [
+        {
+          "name": "じゃこ・わかめ",
+          "price": "3,600",
+          "priceIncl": "3,960"
+        },
+        {
+          "name": "さざえ",
+          "price": "3,700",
+          "priceIncl": "4,070"
+        },
+        {
+          "name": "あわび",
+          "price": "3,700",
+          "priceIncl": "4,070"
+        },
+        {
+          "name": "うに",
+          "price": "時価",
+          "priceIncl": ""
+        }
+      ],
+      "note": "※ ご注文後、白米から炊き上げますので、ご提供までに30分程度（蒸らしまで）お時間をいただきます。"
     },
     "teishoku": {
-      "intro": "1,780円～各種取り揃えております。毎朝、生け簀より獲れたて新鮮な魚にて調理しています。",
-      "arataki": {
-        "name": "荒炊き定食",
-        "price": "1,620",
-        "priceIncl": "1,780"
-      },
-      "niyakana": {
-        "name": "煮魚定食",
-        "price": "1,800",
-        "priceIncl": "1,980"
-      },
-      "sashimi": {
-        "name": "刺身定食",
-        "price": "2,030",
-        "priceIncl": "2,230"
-      },
-      "sashimiNi": {
-        "name": "刺身煮魚定食",
-        "price": "2,430",
-        "priceIncl": "2,670"
-      },
-      "tempura": {
-        "name": "天ぷら定食",
-        "price": "1,800",
-        "priceIncl": "1,980"
-      },
-      "sashimiTempura": {
-        "name": "刺身天ぷら定食",
-        "price": "2,430",
-        "priceIncl": "2,670"
-      },
-      "taicha": {
-        "name": "鯛茶定食",
-        "price": "2,030",
-        "priceIncl": "2,230"
-      }
+      "title": "定食",
+      "intro": "毎朝、生け簀より獲れたて新鮮な魚にて調理しております。",
+      "note": "※ ご飯おかわり 180円／大盛 +110円／定食 +220円で茶碗蒸し付。",
+      "items": [
+        {
+          "name": "刺身定食",
+          "price": "2,100",
+          "priceIncl": "2,310"
+        },
+        {
+          "name": "焼き魚定食（糸島産あじの干物）",
+          "price": "1,600",
+          "priceIncl": "1,760"
+        },
+        {
+          "name": "煮魚定食",
+          "price": "1,900",
+          "priceIncl": "2,090"
+        },
+        {
+          "name": "刺身付煮付定食",
+          "price": "2,500",
+          "priceIncl": "2,750"
+        },
+        {
+          "name": "刺身付天ぷら定食",
+          "price": "2,500",
+          "priceIncl": "2,750"
+        },
+        {
+          "name": "鯛茶づけ（茶碗蒸し・小鉢付）",
+          "price": "2,200",
+          "priceIncl": "2,420"
+        }
+      ]
+    },
+    "ippin": {
+      "title": "一品料理",
+      "note": "※ 季節により、ご用意できない品もございます。",
+      "items": [
+        {
+          "name": "糸島野菜のサラダ",
+          "price": "800",
+          "priceIncl": "880"
+        },
+        {
+          "name": "海藻サラダ",
+          "price": "800",
+          "priceIncl": "880"
+        },
+        {
+          "name": "もずく",
+          "price": "364",
+          "priceIncl": "400"
+        },
+        {
+          "name": "いかさし",
+          "price": "1,500",
+          "priceIncl": "1,650"
+        },
+        {
+          "name": "あわびバター",
+          "price": "1,700〜",
+          "priceIncl": "1,870〜"
+        },
+        {
+          "name": "天ぷら盛り合わせ",
+          "price": "1,500",
+          "priceIncl": "1,650"
+        },
+        {
+          "name": "糸島野菜天ぷら盛り",
+          "price": "1,400",
+          "priceIncl": "1,540"
+        },
+        {
+          "name": "荒炊き",
+          "price": "1,200",
+          "priceIncl": "1,320"
+        },
+        {
+          "name": "さざえ刺し",
+          "price": "1,500",
+          "priceIncl": "1,650"
+        },
+        {
+          "name": "鯛刺し",
+          "price": "1,400",
+          "priceIncl": "1,540"
+        },
+        {
+          "name": "酢だこ",
+          "price": "800",
+          "priceIncl": "880"
+        },
+        {
+          "name": "あわび刺し",
+          "price": "2,500〜",
+          "priceIncl": "2,750〜"
+        },
+        {
+          "name": "魚の煮付け",
+          "price": "1,500",
+          "priceIncl": "1,650"
+        },
+        {
+          "name": "板ウニ",
+          "price": "時価",
+          "priceIncl": ""
+        },
+        {
+          "name": "枝豆",
+          "price": "364",
+          "priceIncl": "400"
+        },
+        {
+          "name": "板ワサ",
+          "price": "437",
+          "priceIncl": "480"
+        }
+      ]
+    },
+    "sugata": {
+      "title": "姿造り・盛り合わせ",
+      "note": "※ 朝日盛り・玄海盛り・船盛り・真鯛・平目は要予約。",
+      "items": [
+        {
+          "name": "刺身盛り合わせ",
+          "price": "2,400",
+          "priceIncl": "2,640"
+        },
+        {
+          "name": "活魚（姿造り）",
+          "price": "1,600〜",
+          "priceIncl": "1,760〜"
+        },
+        {
+          "name": "いせえび姿造り（残りはお料理・お味噌汁に）",
+          "price": "時価",
+          "priceIncl": ""
+        },
+        {
+          "name": "朝日盛り",
+          "price": "6,200",
+          "priceIncl": "6,820"
+        },
+        {
+          "name": "玄海盛り",
+          "price": "10,000",
+          "priceIncl": "11,000"
+        },
+        {
+          "name": "船盛り",
+          "price": "20,000",
+          "priceIncl": "22,000"
+        },
+        {
+          "name": "真鯛",
+          "price": "5,900〜",
+          "priceIncl": "6,490〜"
+        },
+        {
+          "name": "平目",
+          "price": "6,800〜",
+          "priceIncl": "7,480〜"
+        }
+      ]
+    },
+    "yakimono": {
+      "title": "焼き物",
+      "items": [
+        {
+          "name": "活あじ姿焼",
+          "price": "1,400",
+          "priceIncl": "1,540"
+        },
+        {
+          "name": "さざえのつぼ焼き（2ヶ）",
+          "price": "810",
+          "priceIncl": "890"
+        },
+        {
+          "name": "牡蠣焼（冬季〜）",
+          "price": "1,355",
+          "priceIncl": "1,490"
+        },
+        {
+          "name": "岩がき（夏季〜）",
+          "price": "時価",
+          "priceIncl": ""
+        }
+      ]
+    },
+    "sides": {
+      "title": "ご飯・お椀",
+      "items": [
+        {
+          "name": "味噌汁（あらい汁）",
+          "price": "228",
+          "priceIncl": "250"
+        },
+        {
+          "name": "ご飯",
+          "price": "364",
+          "priceIncl": "400"
+        },
+        {
+          "name": "ご飯・お味噌汁セット",
+          "price": "410",
+          "priceIncl": "450"
+        },
+        {
+          "name": "茶碗蒸し",
+          "price": "437",
+          "priceIncl": "480"
+        }
+      ]
     }
   },
   "kaiseki": {

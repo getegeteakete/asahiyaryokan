@@ -54,89 +54,280 @@
   },
   "menu": {
     "label": "Menu",
-    "titleLine1": "Today's Table.",
-    "sub": "お品書き",
-    "intro": "Each morning, we prepare the freshest live fish from our tanks by hand.",
-    "taxIncl": "tax in",
-    "taxExcl": "excl.",
-    "tabs": {
-      "kaisendon": "KAISEN-DON",
-      "asahizen": "ASAHI-ZEN",
-      "kamameshi": "KAMAMESHI",
-      "teishoku": "SET MEALS"
-    },
+    "titleLine1": "Today's Menu.",
+    "sub": "o-shinagaki",
+    "intro": "Each morning, live fish are taken from our tank and prepared by hand. Prices are before tax; figures in ( ) include tax.",
+    "taxIncl": "incl. tax",
+    "taxExcl": "excl. tax",
+    "marketPrice": "Market Price",
     "kaisendon": {
-      "name": "Kaisen-don",
-      "enName": "海鮮丼",
-      "price": "2,610",
-      "priceIncl": "2,890",
-      "desc": "Seafood bowl, small dish, chawanmushi, fish-bone miso, pickles.",
-      "bowlOnly": "Bowl Only",
-      "bowlOnlyPrice": "2,000",
-      "bowlOnlyPriceIncl": "2,200",
-      "note": "※ Contents may vary by season."
+      "name": "Seafood Rice Bowl",
+      "enName": "Kaisen-don",
+      "price": "2,600",
+      "priceIncl": "2,860",
+      "desc": "Seafood bowl, small dish, chawanmushi, fish miso soup, pickles."
+    },
+    "unidon": {
+      "name": "Sea Urchin Rice Bowl",
+      "enName": "Uni-don",
+      "price": "3,300",
+      "priceIncl": "3,630",
+      "desc": "Sea urchin bowl, small dish, chawanmushi, fish miso soup, pickles."
     },
     "asahizen": {
-      "name": "Asahi-zen",
-      "enName": "朝日膳",
-      "price": "3,450",
-      "priceIncl": "3,800",
-      "desc": "Sashimi, sazae sashimi, simmered fish, tempura, small dish, chawanmushi, rice, fish-bone miso, pickles.",
-      "note": "※ Contents may vary by season."
+      "name": "The Asahi Set",
+      "enName": "Asahi-zen",
+      "price": "3,500",
+      "priceIncl": "3,850",
+      "desc": "Sashimi, turban shell sashimi, simmered fish, tempura, small dish, chawanmushi, rice, fish miso soup, pickles."
     },
     "kamameshi": {
-      "name": "Asahi Kamameshi Set",
-      "enName": "朝日釜めし膳",
-      "price": "3,360",
-      "priceIncl": "3,700",
-      "desc": "Fresh ingredients from our tanks, steamed with rice in a small clay pot.",
-      "ingredientsTitle": "Choose one ingredient",
-      "ing1": "Whitebait & Wakame",
-      "ing2": "Sea Urchin",
-      "ing3": "Turban Shell",
-      "ing4": "Abalone",
-      "potOnly": "Clay-pot Only",
-      "potOnlyPrice": "1,700",
-      "potOnlyPriceIncl": "1,870",
-      "note": "※ Preparation takes 20–25 minutes.\n※ Contents may vary by season."
+      "name": "Clay-pot Rice Set",
+      "enName": "Kamameshi-zen",
+      "desc": "Made to order with fresh ingredients from our live tank, cooked from raw rice.",
+      "variantsTitle": "Choose your topping",
+      "variants": [
+        {
+          "name": "Whitebait & Wakame",
+          "price": "3,600",
+          "priceIncl": "3,960"
+        },
+        {
+          "name": "Turban Shell",
+          "price": "3,700",
+          "priceIncl": "4,070"
+        },
+        {
+          "name": "Abalone",
+          "price": "3,700",
+          "priceIncl": "4,070"
+        },
+        {
+          "name": "Sea Urchin",
+          "price": "Market Price",
+          "priceIncl": ""
+        }
+      ],
+      "note": "* Cooked from raw rice to order; please allow about 30 minutes (incl. resting)."
     },
     "teishoku": {
-      "intro": "From ¥1,780, a variety of set meals. Prepared each morning with fish from our live tanks.",
-      "arataki": {
-        "name": "Arataki (Simmered Fish Head) Set",
-        "price": "1,620",
-        "priceIncl": "1,780"
-      },
-      "niyakana": {
-        "name": "Simmered Fish Set",
-        "price": "1,800",
-        "priceIncl": "1,980"
-      },
-      "sashimi": {
-        "name": "Sashimi Set",
-        "price": "2,030",
-        "priceIncl": "2,230"
-      },
-      "sashimiNi": {
-        "name": "Sashimi & Simmered Fish Set",
-        "price": "2,430",
-        "priceIncl": "2,670"
-      },
-      "tempura": {
-        "name": "Tempura Set",
-        "price": "1,800",
-        "priceIncl": "1,980"
-      },
-      "sashimiTempura": {
-        "name": "Sashimi & Tempura Set",
-        "price": "2,430",
-        "priceIncl": "2,670"
-      },
-      "taicha": {
-        "name": "Sea Bream Chazuke Set",
-        "price": "2,030",
-        "priceIncl": "2,230"
-      }
+      "title": "Set Meals",
+      "intro": "Prepared each morning with the freshest fish from our live tank.",
+      "note": "* Rice refill 180 yen / large 110 yen / +220 yen adds chawanmushi.",
+      "items": [
+        {
+          "name": "Sashimi Set",
+          "price": "2,100",
+          "priceIncl": "2,310"
+        },
+        {
+          "name": "Grilled Fish Set (Itoshima dried horse mackerel)",
+          "price": "1,600",
+          "priceIncl": "1,760"
+        },
+        {
+          "name": "Simmered Fish Set",
+          "price": "1,900",
+          "priceIncl": "2,090"
+        },
+        {
+          "name": "Sashimi & Simmered Fish Set",
+          "price": "2,500",
+          "priceIncl": "2,750"
+        },
+        {
+          "name": "Sashimi & Tempura Set",
+          "price": "2,500",
+          "priceIncl": "2,750"
+        },
+        {
+          "name": "Sea Bream Chazuke (w/ chawanmushi & side)",
+          "price": "2,200",
+          "priceIncl": "2,420"
+        }
+      ]
+    },
+    "ippin": {
+      "title": "À la carte",
+      "note": "* Some items may be unavailable depending on the season.",
+      "items": [
+        {
+          "name": "Itoshima Vegetable Salad",
+          "price": "800",
+          "priceIncl": "880"
+        },
+        {
+          "name": "Seaweed Salad",
+          "price": "800",
+          "priceIncl": "880"
+        },
+        {
+          "name": "Mozuku Seaweed",
+          "price": "364",
+          "priceIncl": "400"
+        },
+        {
+          "name": "Squid Sashimi",
+          "price": "1,500",
+          "priceIncl": "1,650"
+        },
+        {
+          "name": "Abalone Butter",
+          "price": "1,700〜",
+          "priceIncl": "1,870〜"
+        },
+        {
+          "name": "Assorted Tempura",
+          "price": "1,500",
+          "priceIncl": "1,650"
+        },
+        {
+          "name": "Itoshima Vegetable Tempura",
+          "price": "1,400",
+          "priceIncl": "1,540"
+        },
+        {
+          "name": "Aradaki (simmered fish)",
+          "price": "1,200",
+          "priceIncl": "1,320"
+        },
+        {
+          "name": "Turban Shell Sashimi",
+          "price": "1,500",
+          "priceIncl": "1,650"
+        },
+        {
+          "name": "Sea Bream Sashimi",
+          "price": "1,400",
+          "priceIncl": "1,540"
+        },
+        {
+          "name": "Vinegared Octopus",
+          "price": "800",
+          "priceIncl": "880"
+        },
+        {
+          "name": "Abalone Sashimi",
+          "price": "2,500〜",
+          "priceIncl": "2,750〜"
+        },
+        {
+          "name": "Simmered Fish",
+          "price": "1,500",
+          "priceIncl": "1,650"
+        },
+        {
+          "name": "Fresh Sea Urchin",
+          "price": "Market Price",
+          "priceIncl": ""
+        },
+        {
+          "name": "Edamame",
+          "price": "364",
+          "priceIncl": "400"
+        },
+        {
+          "name": "Wasabi Fish Cake (Ita-wasa)",
+          "price": "437",
+          "priceIncl": "480"
+        }
+      ]
+    },
+    "sugata": {
+      "title": "Whole-fish Sashimi & Platters",
+      "note": "* Asahi / Genkai / Boat platters, sea bream and flounder require reservation.",
+      "items": [
+        {
+          "name": "Assorted Sashimi",
+          "price": "2,400",
+          "priceIncl": "2,640"
+        },
+        {
+          "name": "Live Fish (whole-fish sashimi)",
+          "price": "1,600〜",
+          "priceIncl": "1,760〜"
+        },
+        {
+          "name": "Spiny Lobster, Whole (rest served cooked / in soup)",
+          "price": "Market Price",
+          "priceIncl": ""
+        },
+        {
+          "name": "Asahi Platter",
+          "price": "6,200",
+          "priceIncl": "6,820"
+        },
+        {
+          "name": "Genkai Platter",
+          "price": "10,000",
+          "priceIncl": "11,000"
+        },
+        {
+          "name": "Boat Platter",
+          "price": "20,000",
+          "priceIncl": "22,000"
+        },
+        {
+          "name": "Red Sea Bream",
+          "price": "5,900〜",
+          "priceIncl": "6,490〜"
+        },
+        {
+          "name": "Flounder",
+          "price": "6,800〜",
+          "priceIncl": "7,480〜"
+        }
+      ]
+    },
+    "yakimono": {
+      "title": "Grilled",
+      "items": [
+        {
+          "name": "Grilled Whole Horse Mackerel",
+          "price": "1,400",
+          "priceIncl": "1,540"
+        },
+        {
+          "name": "Grilled Turban Shell (2 pcs)",
+          "price": "810",
+          "priceIncl": "890"
+        },
+        {
+          "name": "Grilled Oyster (winter〜)",
+          "price": "1,355",
+          "priceIncl": "1,490"
+        },
+        {
+          "name": "Rock Oyster (summer〜)",
+          "price": "Market Price",
+          "priceIncl": ""
+        }
+      ]
+    },
+    "sides": {
+      "title": "Rice & Soup",
+      "items": [
+        {
+          "name": "Miso Soup (fish broth)",
+          "price": "228",
+          "priceIncl": "250"
+        },
+        {
+          "name": "Rice",
+          "price": "364",
+          "priceIncl": "400"
+        },
+        {
+          "name": "Rice & Miso Soup Set",
+          "price": "410",
+          "priceIncl": "450"
+        },
+        {
+          "name": "Chawanmushi",
+          "price": "437",
+          "priceIncl": "480"
+        }
+      ]
     }
   },
   "kaiseki": {
