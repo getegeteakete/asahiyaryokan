@@ -45,8 +45,10 @@ export default function FadeInSection({
         });
       },
       {
-        threshold: 0.12,
-        // 下から12%入ったタイミングで発火（少し早めに上品に）
+        // しきい値は0（少しでも入ったら発火）。
+        // 比率しきい値だと、画面より大幅に高いセクションは条件を満たせず
+        // 永久に非表示になるため、rootMarginでタイミングを調整する。
+        threshold: 0,
         rootMargin: '0px 0px -8% 0px',
       }
     );
