@@ -18,6 +18,18 @@ export default function Banquet() {
           <span className="sub text-kin block text-[16px] font-light tracking-widest mt-4">{t('sub')}</span>
         </h2>
 
+        {/* 船だまりの風景 */}
+        <div className="relative w-full aspect-[16/10] mb-8 overflow-hidden shadow-xl">
+          <Image
+            src="/images/funadamari-harbor.jpg"
+            alt="朝日屋から望む船だまり"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            style={{ filter: 'sepia(0.04) saturate(1.03) brightness(1.02)' }}
+          />
+        </div>
+
         {/* メイン画像 */}
         <div className="relative w-full aspect-[16/9] mb-8 overflow-hidden shadow-xl">
           <Image
