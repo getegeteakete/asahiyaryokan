@@ -2,12 +2,11 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 type PlanCardProps = {
-  tag: string;
   name: string;
   image: string;
 };
 
-function PlanCard({ tag, name, image }: PlanCardProps) {
+function PlanCard({ name, image }: PlanCardProps) {
   const t = useTranslations('stay');
   const amenityKeys = [
     'wifi',
@@ -32,13 +31,6 @@ function PlanCard({ tag, name, image }: PlanCardProps) {
         />
       </div>
       <div className="bg-gradient-to-br from-kinari-light to-washi p-8 md:p-10 border border-sumi/5 shadow-lg transition-all duration-400 hover:shadow-2xl hover:border-kin/30 hover:-translate-y-1.5">
-        <div className="font-cormorant italic text-[10px] tracking-[0.35em] text-kin uppercase mb-4 opacity-75">
-          {tag}
-        </div>
-        <h3 className="text-[26px] font-medium tracking-[0.08em] mb-6 pb-5 border-b border-sumi/10">
-          {name}
-        </h3>
-
         <div className="flex flex-wrap gap-2">
           {amenityKeys.map((key) => (
             <span
@@ -77,12 +69,10 @@ export default function Stay() {
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-10 mt-8">
           <PlanCard
-            tag={t('plan01Tag')}
             name={t('plan01Name')}
             image="/images/room-wa.png"
           />
           <PlanCard
-            tag={t('plan02Tag')}
             name={t('plan02Name')}
             image="/images/120-宴会部屋004-1024x683.jpg"
           />

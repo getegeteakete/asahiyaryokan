@@ -73,6 +73,25 @@ export default function Footer() {
       {/* フッターメニュー */}
       <div className="bg-sumi/80 backdrop-blur px-6 md:px-10 py-8 md:py-10 border-t border-kinari/[0.1]">
         <div className="max-w-[1200px] mx-auto">
+          {/* 公式サイト QRコード */}
+          <div className="flex flex-col items-center gap-3 mb-8">
+            <a
+              href="https://www.asahiyasun.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white p-2.5 rounded-sm shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <Image
+                src="/images/qr-code.png"
+                alt="朝日屋 公式サイト QRコード"
+                width={96}
+                height={96}
+                className="w-24 h-24"
+              />
+            </a>
+            <span className="font-mincho text-kin-light text-[11px] tracking-[0.2em] font-light">公式サイト</span>
+          </div>
+
           <nav className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-8">
             {footerMenuItems.map((item) => (
               <button
