@@ -34,7 +34,7 @@ export default function SideNav() {
 
   return (
     <nav
-      className={`flex fixed right-0 top-[42%] -translate-y-1/2 z-[90] flex-col gap-1.5 md:gap-2 transition-all duration-500 ${
+      className={`fixed right-0 top-0 bottom-0 z-[90] flex flex-col items-end justify-center gap-1.5 md:gap-2 pt-24 md:pt-28 pointer-events-none transition-all duration-500 ${
         isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
       }`}
       aria-label="クイックメニュー"
@@ -44,7 +44,7 @@ export default function SideNav() {
           key={item.key}
           type="button"
           onClick={() => handleClick(item.href)}
-          className={`group relative flex items-center justify-center w-9 md:w-12 lg:w-14 py-4 md:py-6 lg:py-7 text-kinari-light ${item.color} transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-x-1`}
+          className={`group pointer-events-auto relative flex items-center justify-center w-9 md:w-12 lg:w-14 py-4 md:py-6 lg:py-7 text-kinari-light ${item.color} transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-x-1`}
           style={{ borderTopLeftRadius: '6px', borderBottomLeftRadius: '6px' }}
         >
           <span
