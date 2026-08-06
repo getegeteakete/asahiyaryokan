@@ -162,7 +162,24 @@ npm i -g vercel
 vercel
 ```
 
-環境変数は不要。`next.config.mjs` の next-intl プラグイン設定のみで動作。
+サイト本体の表示に環境変数は不要（`next.config.mjs` の next-intl プラグイン設定のみで動作）。
+
+ただし **お知らせ機能（`/ja/admin`）を使う場合は以下の環境変数が必須**です。
+
+| 変数名 | 用途 | 未設定だとどうなるか |
+|--------|------|----------------------|
+| `ADMIN_PASSWORD` | 管理ページのログインパスワード | どのパスワードでもログインできない |
+| `BLOB_READ_WRITE_TOKEN` | Vercel Blob（お知らせ本文・画像の保存先） | 投稿が「保存に失敗しました」になる。Vercel で Blob ストアを接続すると自動で入る |
+
+設定手順：Vercel → プロジェクト → Settings → Environment Variables → **Production** に追加 →
+**再デプロイ**（環境変数は既存のデプロイには反映されないため、追加後に必ず Redeploy が必要）。
+
+設定できているかは以下で確認できる（値そのものは返らない）。
+
+```bash
+curl https://<本番ドメイン>/api/announcements?check=1
+# => {"adminPasswordSet":true,"blobTokenSet":true}
+```
 
 ### その他
 

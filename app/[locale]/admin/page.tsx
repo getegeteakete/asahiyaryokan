@@ -85,7 +85,8 @@ export default function AdminPage() {
       if (r.ok) {
         setAuthed(true);
       } else {
-        setLoginError('パスワードが違います。');
+        const d = await r.json().catch(() => ({} as { error?: string }));
+        setLoginError(d.error || 'パスワードが違います。');
       }
     } catch {
       setLoginError('通信に失敗しました。');

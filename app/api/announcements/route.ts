@@ -9,14 +9,28 @@ import {
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
+// Vercelの環境変数に改行や前後の空白が混ざっていても一致するようtrimして比較する
+function adminPassword(): string {
+  return (process.env.ADMIN_PASSWORD || '').trim();
+}
+
 function authorized(req: NextRequest): boolean {
-  const key = req.headers.get('x-admin-key') || '';
-  const pw = process.env.ADMIN_PASSWORD || '';
+  const key = (req.headers.get('x-admin-key') || '').trim();
+  const pw = adminPassword();
   return pw.length > 0 && key === pw;
 }
 
-// 公開：一覧（新しい順）
-export async function GET() {
+const NO_PASSWORD_MESSAGE =
+  'サーバー側にパスワード（環境変数 ADMIN_PASSWORD）が設定されていません。Vercel の Settings → Environment Variables で Production に登録し、再デプロイしてください。';
+
+// 公開：一覧（新しい順）。?check=1 で設定状況だけを返す（値は返さない）。
+export async function GET(req: NextRequest) {
+  if (req.nextUrl.searchParams.get('check')) {
+    return NextResponse.json({
+      adminPasswordSet: adminPassword().length > 0,
+      blobTokenSet: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+    });
+  }
   const items = await readAnnouncements();
   items.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   return NextResponse.json(items);
@@ -30,9 +44,18 @@ export async function POST(req: NextRequest) {
   if (contentType.includes('application/json')) {
     const body = await req.json().catch(() => ({} as Record<string, unknown>));
     if (body && (body as Record<string, unknown>).verify) {
+      if (!adminPassword()) {
+        return NextResponse.json(
+          { ok: false, reason: 'no_password', error: NO_PASSWORD_MESSAGE },
+          { status: 503 }
+        );
+      }
       return authorized(req)
         ? NextResponse.json({ ok: true })
-        : NextResponse.json({ ok: false }, { status: 401 });
+        : NextResponse.json(
+            { ok: false, reason: 'bad_password', error: 'パスワードが違います。' },
+            { status: 401 }
+          );
     }
     // JSONでの投稿（テキストのみ）
     if (!authorized(req)) {
@@ -44,14 +67,11 @@ export async function POST(req: NextRequest) {
   }
 
   // 写真つき投稿（multipart）
+  if (!adminPassword()) {
+    return NextResponse.json({ error: NO_PASSWORD_MESSAGE }, { status: 503 });
+  }
   if (!authorized(req)) {
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  }
-  if (!process.env.ADMIN_PASSWORD) {
-    return NextResponse.json(
-      { error: 'ADMIN_PASSWORD が未設定です。Vercelの環境変数を設定してください。' },
-      { status: 500 }
-    );
   }
 
   let text = '';
