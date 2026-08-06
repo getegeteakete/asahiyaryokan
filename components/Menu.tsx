@@ -124,7 +124,7 @@ export default function Menu() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28">
           <div className="lg:order-2 relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
             <Image
-              src="/images/050-懐石003-1536x1024.jpg"
+              src="/images/010-朝日定食005-1024x683.jpg"
               alt={t('asahizen.name')}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
