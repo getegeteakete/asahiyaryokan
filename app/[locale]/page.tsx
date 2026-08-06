@@ -11,6 +11,7 @@ import Kaiseki from '@/components/Kaiseki';
 import Banquet from '@/components/Banquet';
 import Stay from '@/components/Stay';
 import Press from '@/components/Press';
+import News from '@/components/News';
 import Access from '@/components/Access';
 import Footer from '@/components/Footer';
 import WaveDivider from '@/components/WaveDivider';
@@ -81,6 +82,9 @@ export default async function HomePage({
         <FadeInSection variant="fade">
           <Press />
         </FadeInSection>
+
+        {/* お知らせ（管理ページからの投稿。0件なら非表示） */}
+        <News />
         <WaveDivider top="kinari" bottom="sumi" flip />
 
         {/* ▼ 店舗情報：吸着 */}

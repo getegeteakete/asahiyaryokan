@@ -58,10 +58,19 @@ export default function AdminPage() {
   const [msg, setMsg] = useState('');
 
   const [items, setItems] = useState<Announcement[]>([]);
+  const [blobMissing, setBlobMissing] = useState(false);
+
+  // Blobストア未接続だと投稿が保存されないため、先に検知して知らせる
+  useEffect(() => {
+    fetch('/api/announcements?check=1', { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => setBlobMissing(d ? d.blobTokenSet === false : false))
+      .catch(() => setBlobMissing(false));
+  }, []);
 
   const loadItems = useCallback(async () => {
     try {
-      const r = await fetch('/api/announcements');
+      const r = await fetch('/api/announcements', { cache: 'no-store' });
       const d = await r.json();
       setItems(Array.isArray(d) ? d : []);
     } catch {
@@ -150,7 +159,17 @@ export default function AdminPage() {
     >
       <div className="max-w-[640px] mx-auto px-5 py-10">
         <h1 className="text-[22px] font-medium tracking-[0.1em] mb-1">朝日屋 お知らせ管理</h1>
-        <p className="text-[12px] text-stone-500 mb-8">投稿するとサイト上部に表示されます。</p>
+        <p className="text-[12px] text-stone-500 mb-4">
+          投稿するとサイト上部のバーと、トップページ下部の「お知らせ」欄に表示されます。
+        </p>
+
+        {blobMissing && (
+          <div className="mb-6 rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-[12px] leading-[1.8] text-amber-900">
+            Vercel Blob ストアが接続されていません（環境変数 <code>BLOB_READ_WRITE_TOKEN</code>{' '}
+            が未設定）。このままでは投稿が保存されず、サイトにも表示されません。Vercel →
+            Storage で Blob ストアを作成・接続し、再デプロイしてください。
+          </div>
+        )}
 
         {!authed ? (
           <div className="bg-white rounded-md shadow-sm border border-stone-200 p-6">

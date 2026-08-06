@@ -15,7 +15,7 @@ export default function AnnouncementBar() {
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-    fetch('/api/announcements')
+    fetch('/api/announcements', { cache: 'no-store' })
       .then((r) => (r.ok ? r.json() : []))
       .then((d) => setItems(Array.isArray(d) ? d : []))
       .catch(() => setItems([]));
