@@ -67,14 +67,10 @@ export default function Stay() {
           {t('inquiry')}
         </p>
 
-        <div className="grid gap-8 md:grid-cols-2 md:gap-10 mt-8">
+        <div className="grid gap-8 md:gap-10 mt-8 max-w-[720px]">
           <PlanCard
             name={t('plan01Name')}
             image="/images/room-wa.png"
-          />
-          <PlanCard
-            name={t('plan02Name')}
-            image="/images/120-宴会部屋004-1024x683.jpg"
           />
         </div>
 
