@@ -84,28 +84,22 @@
     "kamameshi": {
       "name": "朝日釜めし膳",
       "enName": "Clay-pot Rice Set",
+      "price": "3,600",
+      "priceIncl": "3,960",
       "desc": "ご注文後、生け簀より水揚げした新鮮な具材を使い、白米から炊き上げます。",
       "variantsTitle": "釜めしの具をお選びください",
       "variants": [
         {
-          "name": "じゃこ・わかめ",
-          "price": "3,600",
-          "priceIncl": "3,960"
+          "name": "じゃこ・わかめ"
         },
         {
-          "name": "さざえ",
-          "price": "3,700",
-          "priceIncl": "4,070"
+          "name": "さざえ"
         },
         {
-          "name": "あわび",
-          "price": "3,700",
-          "priceIncl": "4,070"
+          "name": "あわび"
         },
         {
-          "name": "うに",
-          "price": "時価",
-          "priceIncl": ""
+          "name": "うに"
         }
       ],
       "note": "※ ご注文後、白米から炊き上げますので、ご提供までに30分程度（蒸らしまで）お時間をいただきます。"

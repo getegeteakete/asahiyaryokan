@@ -52,7 +52,7 @@ export default function Menu() {
   const sugata = t.raw('sugata') as { items: Item[] };
   const yakimono = t.raw('yakimono') as { items: Item[] };
   const sides = t.raw('sides') as { items: Item[] };
-  const variants = t.raw('kamameshi').variants as Item[];
+  const variants = t.raw('kamameshi').variants as { name: string }[];
 
   return (
     <section
@@ -162,11 +162,18 @@ export default function Menu() {
             />
           </div>
           <div>
-            <div className="mb-6">
-              <h3 className="text-[26px] font-medium tracking-[0.08em] mb-2">{t('kamameshi.name')}</h3>
-              <span className={`block text-[12px] tracking-[0.2em] text-kin-light font-light ${isJa ? 'font-cormorant italic' : 'font-mincho not-italic text-[11px]'}`}>
-                {t('kamameshi.enName')}
-              </span>
+            <div className="flex items-baseline gap-4 pb-6 border-b border-kinari/20 mb-6">
+              <div className="flex-1">
+                <h3 className="text-[26px] font-medium tracking-[0.08em] mb-2">{t('kamameshi.name')}</h3>
+                <span className={`block text-[12px] tracking-[0.2em] text-kin-light font-light ${isJa ? 'font-cormorant italic' : 'font-mincho not-italic text-[11px]'}`}>
+                  {t('kamameshi.enName')}
+                </span>
+              </div>
+              {/* 具材ごとの価格は変動するため、基準となる価格のみを「〜」付きで表示 */}
+              <div className="text-right flex-shrink-0">
+                <div className="font-cormorant text-[22px] text-kin-light">¥{t('kamameshi.price')}〜</div>
+                <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('kamameshi.priceIncl')}〜</span>
+              </div>
             </div>
             <p className="text-[14px] leading-[2] text-kinari/70 mb-6 font-light">{t('kamameshi.desc')}</p>
 
@@ -175,24 +182,11 @@ export default function Menu() {
                 {t('kamameshi.variantsTitle')}
               </p>
               <div className="flex flex-col gap-3">
-                {variants.map((v, i) => {
-                  const isMarket = !/^[0-9]/.test(v.price);
-                  return (
-                    <div key={i} className="flex justify-between items-baseline border-b border-kinari/10 last:border-0 pb-3 last:pb-0">
-                      <span className="text-[14px] tracking-[0.05em] font-light"><span className="text-kin-light mr-2">・</span>{v.name}</span>
-                      <div className="text-right">
-                        {isMarket ? (
-                          <span className="font-mincho text-[13px] text-kin-light">{v.price}</span>
-                        ) : (
-                          <>
-                            <span className="font-cormorant text-[16px] text-kin-light">¥{v.price}</span>
-                            {v.priceIncl ? <span className="block text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{v.priceIncl}</span> : null}
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
+                {variants.map((v, i) => (
+                  <div key={i} className="border-b border-kinari/10 last:border-0 pb-3 last:pb-0">
+                    <span className="text-[14px] tracking-[0.05em] font-light"><span className="text-kin-light mr-2">・</span>{v.name}</span>
+                  </div>
+                ))}
               </div>
             </div>
 

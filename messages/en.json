@@ -84,28 +84,22 @@
     "kamameshi": {
       "name": "Clay-pot Rice Set",
       "enName": "Kamameshi-zen",
+      "price": "3,600",
+      "priceIncl": "3,960",
       "desc": "Made to order with fresh ingredients from our live tank, cooked from raw rice.",
       "variantsTitle": "Choose your topping",
       "variants": [
         {
-          "name": "Whitebait & Wakame",
-          "price": "3,600",
-          "priceIncl": "3,960"
+          "name": "Whitebait & Wakame"
         },
         {
-          "name": "Turban Shell",
-          "price": "3,700",
-          "priceIncl": "4,070"
+          "name": "Turban Shell"
         },
         {
-          "name": "Abalone",
-          "price": "3,700",
-          "priceIncl": "4,070"
+          "name": "Abalone"
         },
         {
-          "name": "Sea Urchin",
-          "price": "Market Price",
-          "priceIncl": ""
+          "name": "Sea Urchin"
         }
       ],
       "note": "* Cooked from raw rice to order; please allow about 30 minutes (incl. resting)."
