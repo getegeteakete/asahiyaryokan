@@ -238,7 +238,9 @@ export default function Menu() {
             </div>
           </div>
 
-          <p className="text-[14px] text-kinari/70 mb-8 font-light">{t('teishoku.intro')}</p>
+          <p className="text-[14px] text-kinari/70 mb-2 font-light">{t('teishoku.intro')}</p>
+          {/* 個別の金額は非表示のため、目安の価格をここで案内する */}
+          <p className="text-[14px] text-kin-light mb-8 font-light">{t('teishoku.priceFrom')}</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {teishoku.items.map((it, i) => (

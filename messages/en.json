@@ -108,6 +108,7 @@
     "teishoku": {
       "title": "Set Meals",
       "intro": "Prepared each morning with the freshest fish from our live tank.",
+      "priceFrom": "Available from ¥2,000.",
       "note": "* Rice refill 180 yen / large 110 yen / +220 yen adds chawanmushi.",
       "items": [
         {
