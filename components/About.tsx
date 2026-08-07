@@ -14,8 +14,10 @@ export default function About() {
     <section className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36 overflow-hidden">
       <Deco type="squid" className="top-12 right-[-40px] md:right-8" size={280} opacity={0.06} rotate={-15} variant="dark" />
       <div className="max-w-[1200px] mx-auto relative z-[2]">
-        <div className="grid gap-16 md:grid-cols-2 md:gap-24 md:items-start">
-          <div className="md:pt-4">
+        {/* スマホでは 本文 → 写真（いけす） → お造りのお品書き の順に並ぶ。
+            PC では左列の下段にお品書きを置き、右列の写真と横並びにする。 */}
+        <div className="grid gap-16 md:grid-cols-2 md:gap-x-24 md:gap-y-12 md:items-start">
+          <div className="md:pt-4 md:col-start-1 md:row-start-1">
             <p className="section-label text-shu">{t('label')}</p>
             <h2 className="section-title mb-10">
               {t('titleLine1')}
@@ -28,43 +30,9 @@ export default function About() {
               <p className="text-[15px] leading-[1.95] text-sumi-soft font-light border-l-2 border-kin pl-6">{t('body2')}</p>
             </div>
 
-            {/* お造りのお品書き */}
-            <div className="mt-10 md:mt-12 bg-washi/80 border border-sumi/10 shadow-sm rounded-sm p-6 md:p-8">
-              <div className="flex items-baseline gap-3 pb-4 mb-5 border-b border-sumi/10">
-                <h3 className="text-[19px] md:text-[21px] font-medium tracking-[0.08em]">{sugata.title}</h3>
-                <span className="text-[11px] tracking-[0.2em] text-kin font-cormorant italic font-light">
-                  sashimi
-                </span>
-              </div>
-              <ul className="space-y-3">
-                {sugata.items.map((it, i) => {
-                  const isMarket = !/^[0-9]/.test(it.price);
-                  return (
-                    <li
-                      key={i}
-                      className="flex justify-between items-baseline gap-4 border-b border-sumi/5 last:border-0 pb-3 last:pb-0"
-                    >
-                      <span className="text-[14px] leading-[1.7] text-sumi-soft font-light">
-                        {it.name}
-                      </span>
-                      <span className="text-right flex-shrink-0">
-                        <span className={`text-kin ${isMarket ? 'text-[13px]' : 'font-cormorant text-[16px]'}`}>
-                          {isMarket ? it.price : `¥${it.price}`}
-                        </span>
-                        {it.priceIncl ? (
-                          <span className="block text-[10px] text-clay tracking-[0.1em] font-light">
-                            {tm('taxIncl')} ¥{it.priceIncl}
-                          </span>
-                        ) : null}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-              <p className="text-[11px] text-clay leading-[1.9] mt-5 font-light">{sugata.note}</p>
-            </div>
           </div>
-          <div className="relative">
+
+          <div className="relative md:col-start-2 md:row-start-1 md:row-span-2">
             <div className="relative aspect-[4/3] overflow-hidden shadow-lg mb-4">
               <Image
                 src="/images/011-asahi-teishoku-new.jpg"
@@ -106,6 +74,42 @@ export default function About() {
             </div>
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-kin/5 -z-10 rounded-full blur-3xl" />
           </div>
+
+          {/* お造りのお品書き（いけすの写真を見たあとに価格が目に入る並び） */}
+          <div className="md:col-start-1 md:row-start-2 bg-washi/80 border border-sumi/10 shadow-sm rounded-sm p-6 md:p-8">
+              <div className="flex items-baseline gap-3 pb-4 mb-5 border-b border-sumi/10">
+                <h3 className="text-[19px] md:text-[21px] font-medium tracking-[0.08em]">{sugata.title}</h3>
+                <span className="text-[11px] tracking-[0.2em] text-kin font-cormorant italic font-light">
+                  sashimi
+                </span>
+              </div>
+              <ul className="space-y-3">
+                {sugata.items.map((it, i) => {
+                  const isMarket = !/^[0-9]/.test(it.price);
+                  return (
+                    <li
+                      key={i}
+                      className="flex justify-between items-baseline gap-4 border-b border-sumi/5 last:border-0 pb-3 last:pb-0"
+                    >
+                      <span className="text-[14px] leading-[1.7] text-sumi-soft font-light">
+                        {it.name}
+                      </span>
+                      <span className="text-right flex-shrink-0">
+                        <span className={`text-kin ${isMarket ? 'text-[13px]' : 'font-cormorant text-[16px]'}`}>
+                          {isMarket ? it.price : `¥${it.price}`}
+                        </span>
+                        {it.priceIncl ? (
+                          <span className="block text-[10px] text-clay tracking-[0.1em] font-light">
+                            {tm('taxIncl')} ¥{it.priceIncl}
+                          </span>
+                        ) : null}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className="text-[11px] text-clay leading-[1.9] mt-5 font-light">{sugata.note}</p>
+            </div>
         </div>
       </div>
     </section>
