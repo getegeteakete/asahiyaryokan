@@ -7,7 +7,8 @@ import Deco from './Deco';
 type Item = { name: string; price: string; priceIncl?: string };
 
 /**
- * 丼・膳・定食（海鮮丼／うに丼／朝日膳／朝日釜めし膳／定食）の「価格」の表示。
+ * 丼・膳・定食（海鮮丼／うに丼／朝日膳／定食）の「価格」の表示。
+ * ※ 朝日釜めし膳の「¥3,600〜」だけはこの対象外で常に表示している。
  * 価格が変動しやすいため金額のみ非表示にし、導入文の「定食・膳 2,000〜」で案内している。
  * 品名・写真・説明文は常に表示。金額を戻す場合は true にするだけでよい。
  * ※ 姿造り・盛り合わせ／一品料理／焼き物の価格はこれまで通り表示している。
@@ -196,13 +197,12 @@ export default function Menu() {
                   {t('kamameshi.enName')}
                 </span>
               </div>
-              {/* 具材ごとの価格は変動するため、基準となる価格のみを「〜」付きで表示 */}
-              {SHOW_SET_PRICES && (
-                <div className="text-right flex-shrink-0">
-                  <div className="font-cormorant text-[22px] text-kin-light">¥{t('kamameshi.price')}〜</div>
-                  <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('kamameshi.priceIncl')}〜</span>
-                </div>
-              )}
+              {/* 具材ごとの価格は変動するため、基準となる価格のみを「〜」付きで表示。
+                  ここは他の丼・膳と違い、常に表示する（SHOW_SET_PRICES の対象外）。 */}
+              <div className="text-right flex-shrink-0">
+                <div className="font-cormorant text-[22px] text-kin-light">¥{t('kamameshi.price')}〜</div>
+                <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('kamameshi.priceIncl')}〜</span>
+              </div>
             </div>
             <p className="text-[14px] leading-[2] text-kinari/70 mb-6 font-light">{t('kamameshi.desc')}</p>
 
