@@ -7,14 +7,12 @@ import Deco from './Deco';
 type Item = { name: string; price: string; priceIncl?: string };
 
 /**
- * 定食・膳（朝日膳／朝日釜めし膳／定食）の個別表示。
- * 価格が変動しやすいため現在は非表示にし、導入文の「定食・膳 2,000〜」で案内している。
- * 表示を戻す場合は true にするだけでよい（中身の記述はそのまま残してある）。
+ * 丼・膳・定食（海鮮丼／うに丼／朝日膳／朝日釜めし膳／定食）の「価格」の表示。
+ * 価格が変動しやすいため金額のみ非表示にし、導入文の「定食・膳 2,000〜」で案内している。
+ * 品名・写真・説明文は常に表示。金額を戻す場合は true にするだけでよい。
+ * ※ 姿造り・盛り合わせ／一品料理／焼き物の価格はこれまで通り表示している。
  */
-const SHOW_SET_MEALS = false;
-
-/** 海鮮丼・うに丼の価格表示。こちらも価格変動があるため非表示（品名と説明のみ表示）。 */
-const SHOW_DON_PRICES = false;
+const SHOW_SET_PRICES = false;
 
 export default function Menu() {
   const t = useTranslations('menu');
@@ -22,12 +20,12 @@ export default function Menu() {
   const isJa = locale === 'ja';
 
   // 価格1行（時価などの非数値価格にも対応）
-  const PriceRow = ({ name, price, priceIncl }: Item) => {
+  const PriceRow = ({ name, price, priceIncl, hidePrice }: Item & { hidePrice?: boolean }) => {
     const isMarket = !/^[0-9]/.test(price);
     return (
       <div className="flex justify-between items-baseline gap-4 py-4 px-6 bg-kinari/5 border border-kinari/10 hover:border-kinari/30 transition-colors">
         <span className="text-[15px] tracking-[0.08em] font-light flex-1">{name}</span>
-        <div className="text-right flex-shrink-0">
+        <div className={`text-right flex-shrink-0 ${hidePrice ? 'hidden' : ''}`}>
           {isMarket ? (
             <div className="font-mincho text-[14px] text-kin-light">{price}</div>
           ) : (
@@ -119,7 +117,7 @@ export default function Menu() {
                   {t('kaisendon.enName')}
                 </span>
               </div>
-              {SHOW_DON_PRICES && (
+              {SHOW_SET_PRICES && (
                 <div className="text-right flex-shrink-0">
                   <div className="font-cormorant text-[22px] text-kin-light">¥{t('kaisendon.price')}</div>
                   <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('kaisendon.priceIncl')}</span>
@@ -136,7 +134,7 @@ export default function Menu() {
                   {t('unidon.enName')}
                 </span>
               </div>
-              {SHOW_DON_PRICES && (
+              {SHOW_SET_PRICES && (
                 <div className="text-right flex-shrink-0">
                   <div className="font-cormorant text-[22px] text-kin-light">¥{t('unidon.price')}</div>
                   <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('unidon.priceIncl')}</span>
@@ -148,7 +146,7 @@ export default function Menu() {
         </div>
 
         {/* 朝日膳 - 画像右 */}
-        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28 ${SHOW_SET_MEALS ? '' : 'hidden'}`}>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28">
           <div className="lg:order-2 relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
             <Image
               src="/images/010-朝日定食005-1024x683.jpg"
@@ -167,17 +165,19 @@ export default function Menu() {
                   {t('asahizen.enName')}
                 </span>
               </div>
-              <div className="text-right flex-shrink-0">
-                <div className="font-cormorant text-[22px] text-kin-light">¥{t('asahizen.price')}</div>
-                <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('asahizen.priceIncl')}</span>
-              </div>
+              {SHOW_SET_PRICES && (
+                <div className="text-right flex-shrink-0">
+                  <div className="font-cormorant text-[22px] text-kin-light">¥{t('asahizen.price')}</div>
+                  <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('asahizen.priceIncl')}</span>
+                </div>
+              )}
             </div>
             <p className="text-[14px] leading-[2] text-kinari/70 font-light">{t('asahizen.desc')}</p>
           </div>
         </div>
 
         {/* 朝日釜めし膳 - 画像左 */}
-        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28 ${SHOW_SET_MEALS ? '' : 'hidden'}`}>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28">
           <div className="relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
             <Image
               src="/images/017-kamameshi-deluxe.jpg"
@@ -197,10 +197,12 @@ export default function Menu() {
                 </span>
               </div>
               {/* 具材ごとの価格は変動するため、基準となる価格のみを「〜」付きで表示 */}
-              <div className="text-right flex-shrink-0">
-                <div className="font-cormorant text-[22px] text-kin-light">¥{t('kamameshi.price')}〜</div>
-                <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('kamameshi.priceIncl')}〜</span>
-              </div>
+              {SHOW_SET_PRICES && (
+                <div className="text-right flex-shrink-0">
+                  <div className="font-cormorant text-[22px] text-kin-light">¥{t('kamameshi.price')}〜</div>
+                  <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('kamameshi.priceIncl')}〜</span>
+                </div>
+              )}
             </div>
             <p className="text-[14px] leading-[2] text-kinari/70 mb-6 font-light">{t('kamameshi.desc')}</p>
 
@@ -222,7 +224,7 @@ export default function Menu() {
         </div>
 
         {/* 定食 */}
-        <div className={`pt-8 border-t border-kinari/20 ${SHOW_SET_MEALS ? '' : 'hidden'}`}>
+        <div className="pt-8 border-t border-kinari/20">
           <GroupTitle ja={teishoku ? t('teishoku.title') : '定食'} en="Set Meals" />
 
           <div className="grid md:grid-cols-2 gap-4 mb-10">
@@ -240,7 +242,7 @@ export default function Menu() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {teishoku.items.map((it, i) => (
-              <PriceRow key={i} {...it} />
+              <PriceRow key={i} {...it} hidePrice={!SHOW_SET_PRICES} />
             ))}
           </div>
           <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] mt-5 font-light">{t('teishoku.note')}</p>
