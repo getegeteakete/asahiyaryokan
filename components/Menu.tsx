@@ -6,6 +6,13 @@ import Deco from './Deco';
 
 type Item = { name: string; price: string; priceIncl?: string };
 
+/**
+ * 定食・膳（朝日膳／朝日釜めし膳／定食）の個別表示。
+ * 価格が変動しやすいため現在は非表示にし、導入文の「定食・膳 2,000〜」で案内している。
+ * 表示を戻す場合は true にするだけでよい（中身の記述はそのまま残してある）。
+ */
+const SHOW_SET_MEALS = false;
+
 export default function Menu() {
   const t = useTranslations('menu');
   const locale = useLocale();
@@ -72,7 +79,10 @@ export default function Menu() {
           {t('titleLine1')}
           <span className="sub">{t('sub')}</span>
         </h2>
-        <p className="text-[14px] text-kinari/70 mb-16 md:mb-20 font-light max-w-[640px]">{t('intro')}</p>
+        <div className="mb-16 md:mb-20 max-w-[640px] space-y-2">
+          <p className="text-[14px] text-kinari/70 font-light">{t('intro')}</p>
+          <p className="text-[14px] text-kinari/70 font-light">{t('introSets')}</p>
+        </div>
 
         {/* 姿造り・盛り合わせ（お店の目玉のため、お品書きの最初に配置） */}
         <div className="mb-20 md:mb-28">
@@ -131,7 +141,7 @@ export default function Menu() {
         </div>
 
         {/* 朝日膳 - 画像右 */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28">
+        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28 ${SHOW_SET_MEALS ? '' : 'hidden'}`}>
           <div className="lg:order-2 relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
             <Image
               src="/images/010-朝日定食005-1024x683.jpg"
@@ -160,7 +170,7 @@ export default function Menu() {
         </div>
 
         {/* 朝日釜めし膳 - 画像左 */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28">
+        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28 ${SHOW_SET_MEALS ? '' : 'hidden'}`}>
           <div className="relative w-full aspect-[3/2] overflow-hidden shadow-2xl">
             <Image
               src="/images/017-kamameshi-deluxe.jpg"
@@ -205,7 +215,7 @@ export default function Menu() {
         </div>
 
         {/* 定食 */}
-        <div className="pt-8 border-t border-kinari/20">
+        <div className={`pt-8 border-t border-kinari/20 ${SHOW_SET_MEALS ? '' : 'hidden'}`}>
           <GroupTitle ja={teishoku ? t('teishoku.title') : '定食'} en="Set Meals" />
 
           <div className="grid md:grid-cols-2 gap-4 mb-10">
