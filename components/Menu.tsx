@@ -245,7 +245,10 @@ export default function Menu() {
               <PriceRow key={i} {...it} hidePrice={!SHOW_SET_PRICES} />
             ))}
           </div>
-          <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] mt-5 font-light">{t('teishoku.note')}</p>
+          {/* おかわり・大盛などの金額を含む注記のため、価格非表示中は一緒に隠す */}
+          {SHOW_SET_PRICES && (
+            <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] mt-5 font-light">{t('teishoku.note')}</p>
+          )}
         </div>
 
         {/* 一品料理 */}
