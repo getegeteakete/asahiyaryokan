@@ -297,31 +297,6 @@
           "priceIncl": ""
         }
       ]
-    },
-    "sides": {
-      "title": "Rice & Soup",
-      "items": [
-        {
-          "name": "Miso Soup (fish broth)",
-          "price": "228",
-          "priceIncl": "250"
-        },
-        {
-          "name": "Rice",
-          "price": "364",
-          "priceIncl": "400"
-        },
-        {
-          "name": "Rice & Miso Soup Set",
-          "price": "410",
-          "priceIncl": "450"
-        },
-        {
-          "name": "Chawanmushi",
-          "price": "437",
-          "priceIncl": "480"
-        }
-      ]
     }
   },
   "kaiseki": {
@@ -356,7 +331,6 @@
     "sub": "ご宿泊",
     "plan01Tag": "Plan 01",
     "plan01Name": "Manchō 1F (Dining Floor)",
-
     "weekday": "Weekday",
     "weekend": "Weekend / Pre-holiday ★",
     "taxIncl": "tax in",

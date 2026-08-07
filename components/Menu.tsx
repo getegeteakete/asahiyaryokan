@@ -51,7 +51,6 @@ export default function Menu() {
   const ippin = t.raw('ippin') as { items: Item[] };
   const sugata = t.raw('sugata') as { items: Item[] };
   const yakimono = t.raw('yakimono') as { items: Item[] };
-  const sides = t.raw('sides') as { items: Item[] };
   const variants = t.raw('kamameshi').variants as { name: string }[];
 
   return (
@@ -74,6 +73,17 @@ export default function Menu() {
           <span className="sub">{t('sub')}</span>
         </h2>
         <p className="text-[14px] text-kinari/70 mb-16 md:mb-20 font-light max-w-[640px]">{t('intro')}</p>
+
+        {/* 姿造り・盛り合わせ（お店の目玉のため、お品書きの最初に配置） */}
+        <div className="mb-20 md:mb-28">
+          <GroupTitle ja={t('sugata.title')} en="Whole-fish Sashimi" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {sugata.items.map((it, i) => (
+              <PriceRow key={i} {...it} />
+            ))}
+          </div>
+          <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] mt-5 font-light">{t('sugata.note')}</p>
+        </div>
 
         {/* 海鮮丼 ＋ うに丼 */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 lg:items-center mb-20 md:mb-28">
@@ -230,34 +240,13 @@ export default function Menu() {
           <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] mt-5 font-light">{t('ippin.note')}</p>
         </div>
 
-        {/* 姿造り・盛り合わせ */}
+        {/* 焼き物 */}
         <div className="mt-16 pt-12 border-t border-kinari/20">
-          <GroupTitle ja={t('sugata.title')} en="Whole-fish Sashimi" />
+          <GroupTitle ja={t('yakimono.title')} en="Grilled" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {sugata.items.map((it, i) => (
+            {yakimono.items.map((it, i) => (
               <PriceRow key={i} {...it} />
             ))}
-          </div>
-          <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] mt-5 font-light">{t('sugata.note')}</p>
-        </div>
-
-        {/* 焼き物 ＋ ご飯・お椀 */}
-        <div className="mt-16 pt-12 border-t border-kinari/20 grid lg:grid-cols-2 gap-10 lg:gap-16">
-          <div>
-            <GroupTitle ja={t('yakimono.title')} en="Grilled" />
-            <div className="grid grid-cols-1 gap-4">
-              {yakimono.items.map((it, i) => (
-                <PriceRow key={i} {...it} />
-              ))}
-            </div>
-          </div>
-          <div>
-            <GroupTitle ja={t('sides.title')} en="Rice & Soup" />
-            <div className="grid grid-cols-1 gap-4">
-              {sides.items.map((it, i) => (
-                <PriceRow key={i} {...it} />
-              ))}
-            </div>
           </div>
         </div>
       </div>

@@ -297,31 +297,6 @@
           "priceIncl": ""
         }
       ]
-    },
-    "sides": {
-      "title": "ご飯・お椀",
-      "items": [
-        {
-          "name": "味噌汁（あらい汁）",
-          "price": "228",
-          "priceIncl": "250"
-        },
-        {
-          "name": "ご飯",
-          "price": "364",
-          "priceIncl": "400"
-        },
-        {
-          "name": "ご飯・お味噌汁セット",
-          "price": "410",
-          "priceIncl": "450"
-        },
-        {
-          "name": "茶碗蒸し",
-          "price": "437",
-          "priceIncl": "480"
-        }
-      ]
     }
   },
   "kaiseki": {
@@ -356,7 +331,6 @@
     "sub": "accommodation",
     "plan01Tag": "Plan 01",
     "plan01Name": "満潮 1F（食事処）",
-
     "weekday": "平日",
     "weekend": "土・日・祝前日 ★",
     "taxIncl": "税込",
