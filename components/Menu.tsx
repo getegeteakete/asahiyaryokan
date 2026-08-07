@@ -15,6 +15,9 @@ type Item = { name: string; price: string; priceIncl?: string };
  */
 const SHOW_SET_PRICES = false;
 
+/** 一品料理・焼き物の価格表示。こちらも変動があるため非表示（品名のみ表示）。 */
+const SHOW_ALA_CARTE_PRICES = false;
+
 export default function Menu() {
   const t = useTranslations('menu');
   const locale = useLocale();
@@ -258,7 +261,7 @@ export default function Menu() {
           <GroupTitle ja={t('ippin.title')} en="À la carte" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {ippin.items.map((it, i) => (
-              <PriceRow key={i} {...it} />
+              <PriceRow key={i} {...it} hidePrice={!SHOW_ALA_CARTE_PRICES} />
             ))}
           </div>
           <p className="text-[11px] text-kinari/50 tracking-[0.1em] leading-[1.9] mt-5 font-light">{t('ippin.note')}</p>
@@ -269,7 +272,7 @@ export default function Menu() {
           <GroupTitle ja={t('yakimono.title')} en="Grilled" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {yakimono.items.map((it, i) => (
-              <PriceRow key={i} {...it} />
+              <PriceRow key={i} {...it} hidePrice={!SHOW_ALA_CARTE_PRICES} />
             ))}
           </div>
         </div>
