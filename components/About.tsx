@@ -2,8 +2,13 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Deco from './Deco';
 
+type Item = { name: string; price: string; priceIncl?: string };
+
 export default function About() {
   const t = useTranslations('about');
+  const tm = useTranslations('menu');
+  // お造り（姿造り・盛り合わせ）はお店の目玉のため、店紹介の並びにも掲げる
+  const sugata = tm.raw('sugata') as { title: string; note: string; items: Item[] };
 
   return (
     <section className="relative z-[2] bg-kinari-light px-6 md:px-10 py-24 md:py-36 overflow-hidden">
@@ -21,6 +26,42 @@ export default function About() {
             <div className="space-y-6">
               <p className="text-[15px] leading-[1.95] text-sumi-soft font-light">{t('body1')}</p>
               <p className="text-[15px] leading-[1.95] text-sumi-soft font-light border-l-2 border-kin pl-6">{t('body2')}</p>
+            </div>
+
+            {/* お造りのお品書き */}
+            <div className="mt-10 md:mt-12 bg-washi/80 border border-sumi/10 shadow-sm rounded-sm p-6 md:p-8">
+              <div className="flex items-baseline gap-3 pb-4 mb-5 border-b border-sumi/10">
+                <h3 className="text-[19px] md:text-[21px] font-medium tracking-[0.08em]">{sugata.title}</h3>
+                <span className="text-[11px] tracking-[0.2em] text-kin font-cormorant italic font-light">
+                  sashimi
+                </span>
+              </div>
+              <ul className="space-y-3">
+                {sugata.items.map((it, i) => {
+                  const isMarket = !/^[0-9]/.test(it.price);
+                  return (
+                    <li
+                      key={i}
+                      className="flex justify-between items-baseline gap-4 border-b border-sumi/5 last:border-0 pb-3 last:pb-0"
+                    >
+                      <span className="text-[14px] leading-[1.7] text-sumi-soft font-light">
+                        {it.name}
+                      </span>
+                      <span className="text-right flex-shrink-0">
+                        <span className={`text-kin ${isMarket ? 'text-[13px]' : 'font-cormorant text-[16px]'}`}>
+                          {isMarket ? it.price : `¥${it.price}`}
+                        </span>
+                        {it.priceIncl ? (
+                          <span className="block text-[10px] text-clay tracking-[0.1em] font-light">
+                            {tm('taxIncl')} ¥{it.priceIncl}
+                          </span>
+                        ) : null}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className="text-[11px] text-clay leading-[1.9] mt-5 font-light">{sugata.note}</p>
             </div>
           </div>
           <div className="relative">
