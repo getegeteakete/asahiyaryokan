@@ -13,6 +13,9 @@ type Item = { name: string; price: string; priceIncl?: string };
  */
 const SHOW_SET_MEALS = false;
 
+/** 海鮮丼・うに丼の価格表示。こちらも価格変動があるため非表示（品名と説明のみ表示）。 */
+const SHOW_DON_PRICES = false;
+
 export default function Menu() {
   const t = useTranslations('menu');
   const locale = useLocale();
@@ -116,10 +119,12 @@ export default function Menu() {
                   {t('kaisendon.enName')}
                 </span>
               </div>
-              <div className="text-right flex-shrink-0">
-                <div className="font-cormorant text-[22px] text-kin-light">¥{t('kaisendon.price')}</div>
-                <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('kaisendon.priceIncl')}</span>
-              </div>
+              {SHOW_DON_PRICES && (
+                <div className="text-right flex-shrink-0">
+                  <div className="font-cormorant text-[22px] text-kin-light">¥{t('kaisendon.price')}</div>
+                  <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('kaisendon.priceIncl')}</span>
+                </div>
+              )}
             </div>
             <p className="text-[14px] leading-[2] text-kinari/70 mb-10 font-light">{t('kaisendon.desc')}</p>
 
@@ -131,10 +136,12 @@ export default function Menu() {
                   {t('unidon.enName')}
                 </span>
               </div>
-              <div className="text-right flex-shrink-0">
-                <div className="font-cormorant text-[22px] text-kin-light">¥{t('unidon.price')}</div>
-                <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('unidon.priceIncl')}</span>
-              </div>
+              {SHOW_DON_PRICES && (
+                <div className="text-right flex-shrink-0">
+                  <div className="font-cormorant text-[22px] text-kin-light">¥{t('unidon.price')}</div>
+                  <span className="text-[10px] text-clay tracking-[0.1em] font-light">{t('taxIncl')} ¥{t('unidon.priceIncl')}</span>
+                </div>
+              )}
             </div>
             <p className="text-[14px] leading-[2] text-kinari/70 font-light">{t('unidon.desc')}</p>
           </div>
