@@ -83,30 +83,18 @@ export default function About() {
                   sashimi
                 </span>
               </div>
+              {/* 金額はお品書きの姿造り一覧にのみ掲載し、ここは品名のみ */}
               <ul className="space-y-3">
-                {sugata.items.map((it, i) => {
-                  const isMarket = !/^[0-9]/.test(it.price);
-                  return (
-                    <li
-                      key={i}
-                      className="flex justify-between items-baseline gap-4 border-b border-sumi/5 last:border-0 pb-3 last:pb-0"
-                    >
-                      <span className="text-[14px] leading-[1.7] text-sumi-soft font-light">
-                        {it.name}
-                      </span>
-                      <span className="text-right flex-shrink-0">
-                        <span className={`text-kin ${isMarket ? 'text-[13px]' : 'font-cormorant text-[16px]'}`}>
-                          {isMarket ? it.price : `¥${it.price}`}
-                        </span>
-                        {it.priceIncl ? (
-                          <span className="block text-[10px] text-clay tracking-[0.1em] font-light">
-                            {tm('taxIncl')} ¥{it.priceIncl}
-                          </span>
-                        ) : null}
-                      </span>
-                    </li>
-                  );
-                })}
+                {sugata.items.map((it, i) => (
+                  <li
+                    key={i}
+                    className="border-b border-sumi/5 last:border-0 pb-3 last:pb-0"
+                  >
+                    <span className="text-[14px] leading-[1.7] text-sumi-soft font-light">
+                      {it.name}
+                    </span>
+                  </li>
+                ))}
               </ul>
               <p className="text-[11px] text-clay leading-[1.9] mt-5 font-light">{sugata.note}</p>
             </div>
